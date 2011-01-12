@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo+css">
+
+    <!-- The default theme, used for standard Plone web pages -->
+    <theme href="theme.html" css:if-content="#visual-portal-wrapper" />
+
+    <!-- Rules applying to a standard Plone web page -->
+    <rules css:if-content="#visual-portal-wrapper">
+        
+        <!-- Add meta tags -->
+        <drop theme="/html/head/meta" />
+        <append content="/html/head/meta" theme="/html/head" />
+
+        <!-- Copy style, script and link tags in the order they appear in the content -->
+        <append
+            content="/html/head/style | /html/head/script | /html/head/link"
+            theme="/html/head"
+            />
+
+        <drop theme="/html/head/style" />
+        <drop theme="/html/head/script" />
+        <drop theme="/html/head/link" />
+
+        <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+        <prepend content="/html/body/@class" theme="/html/body" />
+        <prepend content="/html/body/@id"    theme="/html/body" />
+        <prepend content="/html/body/@dir"   theme="/html/body" />
+
+        <!-- Logo (link target) -->
+        <prepend content='//*[@id="portal-logo"]/@href' css:theme="#logo" />
+        
+        <!-- Site actions -->
+        <copy css:content="#portal-siteactions li" css:theme="#actions" />
+
+        <!-- Global navigation -->
+        <copy css:content='#portal-globalnav li' css:theme='#global-navigation' />
+
+        <!-- Breadcrumbs -->
+        <copy css:content='#portal-breadcrumbs > *' css:theme='#breadcrumbs' />
+
+        <!-- Document Content -->
+        <copy css:content="#content > *" css:theme="#document-content" />
+        <before css:content="#edit-bar" css:theme="#document-content" />
+        <before css:content=".portalMessage" css:theme="#document-content" />
+
+        <!-- Columns -->
+        <copy css:content="#portal-column-one > *" css:theme="#column-one" />
+        <copy css:content="#portal-column-two > *" css:theme="#column-two" />
+        
+    </rules>
+</rules>
