@@ -11,12 +11,4 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <genericsetup:importStep
-      name="plonetheme.jquerymobile.various"
-      title="JQueryMobile Theme: miscellaneous import steps"
-      description="Various import steps that are not handled by GS import/export handlers."
-      handler="plonetheme.jquerymobile.setuphandlers.setupVarious">
-    <depends name="skins"/>
-  </genericsetup:importStep>
-
 </configure>

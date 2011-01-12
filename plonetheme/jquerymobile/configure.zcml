@@ -7,13 +7,17 @@
     i18n_domain="plonetheme.jquerymobile">
 
   <five:registerPackage package="." initialize=".initialize" />
+
   <include package=".browser" />
-  <include file="skins.zcml" />
   <include file="profiles.zcml" />
+
+  <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
+
   <i18n:registerTranslations directory="locales" />
 
   <plone:static
       type="theme"
       directory="static"
       />
+
 </configure>
