@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:plone="http://namespaces.plone.org/plone"
@@ -19,5 +20,15 @@
       type="theme"
       directory="static"
       />
-
+  <adapter
+      name="plone.app.theming.transform"
+      factory=".transform.ThemeTransform"
+      />
+  <browser:page
+      name="themejquerymobile-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      permission="cmf.ManagePortal"
+      class=".controlpanel.ThemeSettingsControlPanelView"
+      layer="plonetheme.jquerymobile.interfaces.IThemingLayer"
+      />
 </configure>

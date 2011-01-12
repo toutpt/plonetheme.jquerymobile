@@ -19,20 +19,20 @@
             <prepend content="/html/body/@dir"   theme="/html/body" />
 
             <!-- Logo (link target) -->
-            <prepend content='//*[@id="portal-logo"]/@href' css:theme="#logo" />
+            <copy css:content="#portal-logo > img" css:theme="#logo" />
             
-            <!-- Site actions -->
-            <copy css:content="#portal-siteactions li" css:theme="#actions" />
-
             <!-- Global navigation -->
-            <copy css:content='#portal-globalnav li' css:theme='#global-navigation' />
+            <copy css:content="#portal-globalnav" css:theme="#navbar" />
+            <!--TODO: update class="selected" by class="ui-btn-active" -->
 
             <!-- Breadcrumbs -->
             <copy css:content='#portal-breadcrumbs > *' css:theme='#breadcrumbs' />
 
             <!-- Document Content -->
             <copy css:content="#content-core > *" css:theme="#content" />
-            <copy css:content="#content > h1" css:theme="#header" />
+            <prepend css:content="#content > h1" css:theme="#header" />
+
+
 
         </rules>
 </rules>
