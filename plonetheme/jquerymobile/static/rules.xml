@@ -4,7 +4,35 @@
     <theme href="theme.html" />
     
     <replace content='/html/head/title' theme='/html/head/title' />
-    <replace content='//h1[class=documentFirstHeading]' theme='/html/body/h1' />
-    <append content='/html/head/link' theme='/html/head' />
+    <rules css:if-content="#visual-portal-wrapper">
+
+            <!-- Add meta tags -->
+            <drop theme="/html/head/meta" />
+            <append content="/html/head/meta" theme="/html/head" />
     
+            <!-- Copy style, script and link tags in the order they appear in the content -->
+
+            <!-- Copy over the id/class attributes on the body tag.
+                 This is important for per-section styling -->
+            <prepend content="/html/body/@class" theme="/html/body" />
+            <prepend content="/html/body/@id"    theme="/html/body" />
+            <prepend content="/html/body/@dir"   theme="/html/body" />
+
+            <!-- Logo (link target) -->
+            <prepend content='//*[@id="portal-logo"]/@href' css:theme="#logo" />
+            
+            <!-- Site actions -->
+            <copy css:content="#portal-siteactions li" css:theme="#actions" />
+
+            <!-- Global navigation -->
+            <copy css:content='#portal-globalnav li' css:theme='#global-navigation' />
+
+            <!-- Breadcrumbs -->
+            <copy css:content='#portal-breadcrumbs > *' css:theme='#breadcrumbs' />
+
+            <!-- Document Content -->
+            <copy css:content="#content-core > *" css:theme="#content" />
+            <copy css:content="#content > h1" css:theme="#header" />
+
+        </rules>
 </rules>
