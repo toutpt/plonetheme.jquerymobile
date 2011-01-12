@@ -1,9 +1,9 @@
 <registry>
   <!-- plone.app.theming settings -->
   <record interface="plone.app.theming.interfaces.IThemeSettings" field="rules">
-      <value>/++theme++plonetheme.jquerymobile/rules.xml</value>
+      <value>python://plonetheme.jquerymobile/static/rules.xml</value>
   </record>
   <record interface="plone.app.theming.interfaces.IThemeSettings" field="absolutePrefix">
-      <value>/++theme++plonetheme.jquerymobile</value>
+      <value>python://plonetheme.jquerymobile/static/</value>
   </record>
 </registry>
