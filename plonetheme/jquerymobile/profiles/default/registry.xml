@@ -1,7 +1,3 @@
 <registry>
   <!-- plone.app.theming settings -->
-  <records interface="plonetheme.jquerymobile.interfaces.IThemeSettings" />
-  <record interface="plonetheme.jquerymobile.interfaces.IThemeSettings" field="rules">
-      <value>python://plonetheme.jquerymobile/static/rules.xml</value>
-  </record>
 </registry>
