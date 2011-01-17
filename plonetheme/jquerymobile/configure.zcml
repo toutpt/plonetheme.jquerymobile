@@ -12,8 +12,6 @@
   <include package=".browser" />
   <include file="profiles.zcml" />
 
-  <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
-
   <i18n:registerTranslations directory="locales" />
 
   <plone:static

@@ -2,21 +2,27 @@
 <html> 
   <head> 
   <title>Page Title</title> 
-  <link rel="stylesheet" href="++resource++jquery.mobile/jquery.mobile-1.0a2.min.css" />
-  <script src="jquery.js"></script>
-  <script src="++resource++jquery.mobile/jquery.mobile-1.0a2.min.js"></script>
+  <link rel="stylesheet" href="css/jquery.mobile-1.0a2.min.css" />
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/jquery.mobile-1.0a2.min.js"></script>
 </head>
 <body>
 <div data-role="page">
-  <div id="logo"></div>
+  <div id="logo"><img src="images/logo.png" alt="logo"/></div>
   <div data-role="header" id="header">
-    <>
+    <h1>Welcome to jquerymobile static theme for Plone</h1>
     <div data-role="navbar" id="navbar">
+      <ul id="portal-globalnav">
+        <li id="portaltab-index_html" class="selected"><a href="">Home</a></li>
+        <li id="portaltab-news" class="selected"><a href="">News</a></li>
+        <li id="portaltab-events" class="selected"><a href="">Events</a></li>
+        <li id="portaltab-Members" class="selected"><a href="">Members</a></li>
+      </ul>
     </div>
   </div>
 
   <div data-role="content" id="content">
-
+    <p>THE HTML CONTENT</p>
   </div>
   <div data-role="footer" id="footer">
 
