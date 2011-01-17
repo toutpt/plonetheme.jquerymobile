@@ -25,4 +25,15 @@
       factory=".themesettings.ThemeSettings"
       />
 
+  <adapter
+      name="plone.app.theming.transform"
+      factory=".transform.ThemeTransform"
+      />
+  <browser:page
+      name="plonetheme-jquerymobile-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      permission="cmf.ManagePortal"
+      class=".controlpanel.ThemeSettingsControlPanelView"
+      layer="plonetheme.jquerymobile.interfaces.IThemingLayer"
+      />
 </configure>

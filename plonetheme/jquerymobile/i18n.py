@@ -4,11 +4,11 @@ messageFactory = MessageFactory("plonetheme.jquerymobile")
 
 _ = messageFactory
 
-label_domains = _(u"label_domains",
-                  default=u"Domains")
+label_domain = _(u"label_domain",
+                  default=u"Domain")
 
-desc_domains =   _(u"desc_domains",
-                   default=u"Domains for which mobile themes will be use. One per line")
+desc_domain =   _(u"desc_domain",
+                   default=u"Domain for which mobile theme will be used")
 
 label_controlpanel = _(u"label_controlpanel",
                        default=u"Jquery Mobile theme settings")
