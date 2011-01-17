@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.0dev'
 
 setup(name='plonetheme.jquerymobile',
       version=version,
@@ -26,6 +26,7 @@ setup(name='plonetheme.jquerymobile',
       install_requires=[
           'setuptools',
           'plone.app.theming',
+          'plone.app.registry',
           'collective.js.jquerymobile',
           # -*- Extra requirements: -*-
       ],
