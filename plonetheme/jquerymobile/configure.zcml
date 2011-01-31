@@ -3,6 +3,7 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="plonetheme.jquerymobile">
@@ -17,7 +18,21 @@
   <plone:static
       type="theme"
       directory="static"
+      name="jquerymobile"
       />
+  <!-- override plone.browserlayer to add the theme layer only on setting.domain -->
+  <subscriber
+      for="Products.CMFCore.interfaces.ISiteRoot
+           zope.app.publication.interfaces.IBeforeTraverseEvent"
+      handler=".layer.mark_layer"
+      />
+   <include package="collective.monkeypatcher" />
+   <monkey:patch
+        description="This works around issue http://some.tracker.tld/ticket/123"
+        class="Products.CMFPlone.SkinsTool.SkinsTool"
+        original="getDefaultSkin"
+        replacement=".SkinsTool.getDefaultSkin"
+        />
   <utility
       name="plonetheme.jquerymobile"
       factory=".themesettings.ThemeSettings"
