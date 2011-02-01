@@ -19,7 +19,7 @@
             <prepend content="/html/body/@dir"   theme="/html/body" />
 
             <!-- Logo (link target) -->
-            <copy css:content="#portal-logo > img" css:theme="#logo" />
+            <copy css:content="#portal-logo" css:theme="#logo" />
             
             <!-- Global navigation -->
             <copy css:content="#portal-globalnav" css:theme="#navbar" />
@@ -34,6 +34,7 @@
             <prepend css:content="#content > h1" css:theme="#header" />
 
             <!-- add contact link -->
-                <copy theme="/html/body/div[@id='siteaction-contact']" content="/html/body/div[@id='description']/node()" if-content="/html/body/div[@id='description']"/>
+            <copy theme="/html/body/div[@id='siteaction-contact']" content="/html/body/div[@id='description']/node()" if-content="/html/body/div[@id='description']"/>
+
         </rules>
 </rules>

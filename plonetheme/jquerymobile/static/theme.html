@@ -8,11 +8,10 @@
 </head>
 <body>
 <div data-role="page">
-  <div id="logo" style="float:left;"><img src="logo.png" alt="logo"/></div>
-  <div data-role="controlgroup"  data-type="horizontal" style="float:right;">
-    <a href="search_form" data-role="button">Search</a>
-    <a id="siteaction-contact" href="contact-info" data-role="button">Contact</a>
-  </div>
+  <form data-role="fieldcontain" name="searchform" id="livesearch0" action="search" style="white-space: nowrap; float:right;">
+        <input name="SearchableText" type="search" title="Recherche">
+  </form>
+  <div id="logo" style="float:left;"><a href="/"><img src="logo.png" alt="logo"/></a></div>
   <div data-role="header" id="header">
     <h1>Welcome to jquerymobile static theme for Plone</h1>
     <div data-role="navbar" id="navbar">
