@@ -10,6 +10,8 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
+
   <include package=".browser" />
   <include file="profiles.zcml" />
 
@@ -28,10 +30,17 @@
       />
    <include package="collective.monkeypatcher" />
    <monkey:patch
-        description="This works around issue http://some.tracker.tld/ticket/123"
+        description="make default skin different if on mobile domain"
         class="Products.CMFPlone.SkinsTool.SkinsTool"
         original="getDefaultSkin"
         replacement=".SkinsTool.getDefaultSkin"
+        />
+   <monkey:patch
+        description="make default view different if on mobile domain"
+        class="Products.CMFPlone.PloneTool.PloneTool"
+        original="browserDefault"
+        replacement=".PloneTool.browserDefault"
+        preserveOriginal="True"
         />
   <utility
       name="plonetheme.jquerymobile"
@@ -47,6 +56,5 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       permission="cmf.ManagePortal"
       class=".controlpanel.ThemeSettingsControlPanelView"
-      layer="plonetheme.jquerymobile.interfaces.IThemingLayer"
       />
 </configure>

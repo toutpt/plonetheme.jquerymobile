@@ -24,7 +24,7 @@ class ThemeTransform(base.ThemeTransform):
             key = getSite().absolute_url()
         except AttributeError:
             return None
-        settings.absolutePrefix = key + '/++theme++jquerymobile/'
+        settings.absolutePrefix = key + '/++theme++jquerymobile/'#'/++resource++jquery.mobile/'
         return settings
 
 class ThemeSettings(object):

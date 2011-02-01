@@ -4,4 +4,16 @@
     i18n_domain="plonetheme.jquerymobile">
 
 
+   <browser:page
+     for="plone.app.folder.folder.IATUnifiedFolder"
+     name="jquerymobile"
+     class=".jquerymobile.Folder"
+     permission="zope2.View"
+     />
+   <browser:page
+     for="Products.ATContentTypes.interfaces.IATTopic"
+     name="jquerymobile"
+     class=".jquerymobile.Topic"
+     permission="zope2.View"
+     />
 </configure>

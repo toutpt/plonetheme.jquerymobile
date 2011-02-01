@@ -3,6 +3,7 @@ from plonetheme.jquerymobile import interfaces
 from zope import component
 from zope import interface
 from plone.registry.interfaces import IRegistry
+from plonetheme.jquerymobile import logger
 
 def mark_layer(site, event):
     base.mark_layer(site, event)

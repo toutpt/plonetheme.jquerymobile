@@ -1,6 +1,0 @@
-<layers>
-    <layer
-        name="plonetheme.jquerymobile"
-        interface="plonetheme.jquerymobile.interfaces.IThemingLayer"
-        />
-</layers>
