@@ -3,7 +3,12 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plonetheme.jquerymobile">
 
-
+   <browser:page
+     for="*"
+     name="jquerymobile-resource-include-condition"
+     class=".resource.IncludeCondition"
+     permission="zope2.View"
+     />
    <browser:page
      for="plone.app.folder.folder.IATUnifiedFolder"
      name="jquerymobile"

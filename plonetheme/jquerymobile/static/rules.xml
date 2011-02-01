@@ -33,5 +33,7 @@
             <drop css:theme="#header h1"/>
             <prepend css:content="#content > h1" css:theme="#header" />
 
+            <!-- add contact link -->
+                <copy theme="/html/body/div[@id='siteaction-contact']" content="/html/body/div[@id='description']/node()" if-content="/html/body/div[@id='description']"/>
         </rules>
 </rules>

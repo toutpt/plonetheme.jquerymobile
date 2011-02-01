@@ -1,4 +1,4 @@
-#Override plone.app.theming transform component to support a specific domain
+#Override plone.app.theming transform component to apply theme only on a specific domain
 from zope import component
 from zope import interface
 from plone.registry.interfaces import IRegistry
@@ -20,11 +20,6 @@ class ThemeTransform(base.ThemeTransform):
         if base1 != mobile.domain:
             return super(ThemeTransform, self).getSettings()
         settings = ThemeSettings(registry=registry.forInterface(baseIFace))
-        try:
-            key = getSite().absolute_url()
-        except AttributeError:
-            return None
-        settings.absolutePrefix = key + '/++theme++jquerymobile/'#'/++resource++jquery.mobile/'
         return settings
 
 class ThemeSettings(object):

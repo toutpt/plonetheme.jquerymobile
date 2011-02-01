@@ -2,7 +2,7 @@
 <object name="portal_skins">
  <object name="plonetheme_jquerymobile_custom" meta_type="Filesystem Directory View"
     directory="plonetheme.jquerymobile:skins/plonetheme_jquerymobile_custom"/>
- <skin-path name="JQuery Mobile Theme">
+ <skin-path name="JQuery Mobile Theme" based-on="Sunburst Theme">
   <layer name="plonetheme_jquerymobile_custom" insert-after="custom"/>
  </skin-path>
 </object>

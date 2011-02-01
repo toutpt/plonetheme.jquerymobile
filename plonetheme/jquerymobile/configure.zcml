@@ -1,8 +1,9 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:five="http://namespaces.zope.org/five"
     xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:monkey="http://namespaces.plone.org/monkey"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
@@ -13,7 +14,6 @@
   <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
 
   <include package=".browser" />
-  <include file="profiles.zcml" />
 
   <i18n:registerTranslations directory="locales" />
 
@@ -56,5 +56,12 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       permission="cmf.ManagePortal"
       class=".controlpanel.ThemeSettingsControlPanelView"
+      />
+  <genericsetup:registerProfile
+      name="default"
+      title="JQueryMobile Theme"
+      directory="profiles/default"
+      description='Extension profile for the "JQueryMobile Theme" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 </configure>
