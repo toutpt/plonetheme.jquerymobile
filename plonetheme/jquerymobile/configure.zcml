@@ -10,46 +10,34 @@
     i18n_domain="plonetheme.jquerymobile">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <include package="collective.monkeypatcher"/>
+  <include package="Products.CMFCore" file="permissions.zcml"/>
+
+  <monkey:patch
+      description="make default skin different if on mobile domain"
+      class="Products.CMFPlone.SkinsTool.SkinsTool"
+      original="getDefaultSkin"
+      replacement=".SkinsTool.getDefaultSkin"
+      preserveOriginal="True"
+      />
+  <monkey:patch
+      description="make default view different if on mobile domain"
+      class="Products.CMFPlone.PloneTool.PloneTool"
+      original="browserDefault"
+      replacement=".PloneTool.browserDefault"
+      preserveOriginal="True"
+      />
 
   <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
+  <i18n:registerTranslations directory="locales" />
 
   <include package=".browser" />
 
-  <i18n:registerTranslations directory="locales" />
-
-  <plone:static
-      type="theme"
-      directory="static"
-      name="jquerymobile"
-      />
   <!-- override plone.browserlayer to add the theme layer only on setting.domain -->
   <subscriber
       for="Products.CMFCore.interfaces.ISiteRoot
            zope.app.publication.interfaces.IBeforeTraverseEvent"
       handler=".layer.mark_layer"
-      />
-   <include package="collective.monkeypatcher" />
-   <monkey:patch
-        description="make default skin different if on mobile domain"
-        class="Products.CMFPlone.SkinsTool.SkinsTool"
-        original="getDefaultSkin"
-        replacement=".SkinsTool.getDefaultSkin"
-        />
-   <monkey:patch
-        description="make default view different if on mobile domain"
-        class="Products.CMFPlone.PloneTool.PloneTool"
-        original="browserDefault"
-        replacement=".PloneTool.browserDefault"
-        preserveOriginal="True"
-        />
-  <utility
-      name="plonetheme.jquerymobile"
-      factory=".themesettings.ThemeSettings"
-      />
-
-  <adapter
-      name="plone.app.theming.transform"
-      factory=".transform.ThemeTransform"
       />
   <browser:page
       name="plonetheme-jquerymobile-controlpanel"
@@ -64,4 +52,12 @@
       description='Extension profile for the "JQueryMobile Theme" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+  <browser:viewlet
+      name="plone.resourceregistries"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      template="resourceregistries.pt"
+      permission="zope2.View"
+      layer="plonetheme.jquerymobile.interfaces.IThemingLayer"
+      />
+
 </configure>

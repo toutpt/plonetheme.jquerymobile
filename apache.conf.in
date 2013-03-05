@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+   ServerName ${vhost} 
+   ServerAdmin jeanmichel.francois@makina-corpus.com
+
+   LogLevel warn
+   ErrorLog "|/usr/bin/cronolog ${buildout:directory}/var/apache2/log/apache/%Y/%W/%d-error.log"
+   CustomLog "|/usr/bin/cronolog ${buildout:directory}/var/apache2/log/apache/%Y/%W/%d-access.log" combined
+
+   <IfModule mod_proxy.c>
+      <Proxy *>
+         Order allow,deny
+         Allow from all
+      </Proxy>
+      ProxyRequests off
+      ProxyTimeout 1200
+      ProxyPass       /       http://localhost:8080/VirtualHostBase/http/${vhost}:80/Plone/VirtualHostRoot/
+      ProxyPassReverse /      http://localhost:8080/VirtualHostBase/http/${vhost}:80/Plone/VirtualHostRoot/
+   </IfModule>
+</VirtualHost>

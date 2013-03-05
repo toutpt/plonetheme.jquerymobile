@@ -28,7 +28,7 @@ setup(name='plonetheme.jquerymobile',
           'plone.browserlayer',
           'plone.app.theming',
           'plone.app.registry',
-#          'collective.js.jquerymobile',
+          'collective.js.jquerymobile',
           'collective.monkeypatcher',
           # -*- Extra requirements: -*-
       ],
