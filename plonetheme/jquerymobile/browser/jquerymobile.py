@@ -31,21 +31,34 @@ class JQueryMobile(BrowserView):
                 render = default_page.restrictedTraverse('jquerymobile_view')()
                 self.render = render
 
-        portal_state = component.getMultiAdapter(
-            (self.context, self.request), name=u'plone_portal_state'
+        self.add_view_dependency(u'plone_portal_state')
+        self.add_view_dependency(u'plone_context_state')
+        self.add_view_dependency(u'plone')
+
+    def add_view_dependency(self, name):
+        self.dependencies[name] = component.getMultiAdapter(
+            (self.context, self.request), name=name
         )
-        context_state = component.getMultiAdapter(
-            (self.context, self.request), name=u'plone_context_state'
-        )
-        self.dependencies['portal_state'] = portal_state
-        self.dependencies['context_state'] = context_state
 
     def pageid(self):
         return '-'.join(self.context.getPhysicalPath())[1:]
 
     def site_title(self):
-        pstate = self.dependencies['portal_state']
+        pstate = self.dependencies['plone_portal_state']
         return pstate.portal_title()
+
+    def has_left_portlets(self):
+        return self.dependencies['plone'].have_portlets(
+            'plone.leftcolumn', self.context
+        )
+
+    def has_right_portlets(self):
+        return self.dependencies['plone'].have_portlets(
+            'plone.rightcolumn', self.context
+        )
+
+    def has_both_portlets(self):
+        return self.has_left_portlets() and self.has_right_portlets()
 
 
 class PloneSite(JQueryMobile):

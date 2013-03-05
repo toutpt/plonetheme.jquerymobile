@@ -34,16 +34,22 @@
   </head>
 <body>
 
-<div data-role="page" tal:attributes="id view/pageid">
+<div data-role="page" tal:attributes="id view/pageid" class="page">
 
     <div data-role="header">
-        <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/@@jquerymobile_view" data-icon="home" data-iconpos="left" class="ui-btn-left">
-            Home
+        <a tal:condition="view/has_left_portlets"
+           tal:attributes="href string:#panel-left-${view/pageid}"
+           data-role="button" data-icon="bars"
+           data-iconpos="left" class="ui-btn-left">
+           Column 1
         </a>
-        <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/menu" data-icon="bars" data-iconpos="left" class="ui-btn-right">
-            Menu
+        <a tal:condition="view/has_right_portlets"
+           tal:attributes="href string:${portal_state/navigation_root_url}/menu"
+           data-role="button" data-icon="bars"
+           data-iconpos="left" class="ui-btn-right">
+            Column 2
         </a>
-        <h4 tal:content="view/site_title">Web site title</h4>
+        <h4><a tal:content="view/site_title" tal:attributes="href string:${portal_state/navigation_root_url}/@@jquerymobile_view">Web site title</a></h4>
     </div>
 
     <div data-role="content">
@@ -57,7 +63,25 @@
         &nbsp;
     </div>
 
+    <div tal:condition="view/has_left_portlets" data-role="panel" class="panel-left" tal:attributes="id string:panel-left-${view/pageid}">
+      <tal:block replace="structure provider:plone.leftcolumn" />
+    </div>
+    <div tal:condition="view/has_right_portlets" data-role="panel" class="panel-right" tal:attributes="id string:panel-right-${view/pageid}">
+      <tal:block replace="structure provider:plone.rightcolumn" />
+    </div>
+
 </div>
+
+<script type="text/javascript">
+$(".page").on('swipeleft', openleftpanel);
+$(".page").on('swiperight', openrightpanel);
+function openleftpanel( event ){
+  $(event.target).children(".panel-left").panel({ display: "reveal" });
+}
+function openrightpanel( event ){
+  $(event.target).children(".panel-right").panel({ display: "reveal" });
+}
+</script>
 
 </body>
 </html>
