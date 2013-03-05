@@ -4,6 +4,13 @@
     i18n_domain="plonetheme.jquerymobile">
 
    <browser:page
+     for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+     name="jquerymobile_view"
+     class=".jquerymobile.PloneSite"
+     permission="zope2.View"
+     />
+
+   <browser:page
      for="Products.ATContentTypes.interfaces.IATDocument"
      name="jquerymobile_view"
      class=".jquerymobile.Document"

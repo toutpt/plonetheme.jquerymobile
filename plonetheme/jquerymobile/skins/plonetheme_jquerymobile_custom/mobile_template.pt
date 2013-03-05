@@ -37,13 +37,13 @@
 <div data-role="page" tal:attributes="id view/pageid">
 
     <div data-role="header">
-        <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/@@example.collective.js.jquerymobile" data-icon="home" data-iconpos="left" class="ui-btn-left">
+        <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/@@jquerymobile_view" data-icon="home" data-iconpos="left" class="ui-btn-left">
             Home
         </a>
         <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/menu" data-icon="bars" data-iconpos="left" class="ui-btn-right">
             Menu
         </a>
-        <h4>Web site title</h4>
+        <h4 tal:content="view/site_title">Web site title</h4>
     </div>
 
     <div data-role="content">
