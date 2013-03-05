@@ -8,20 +8,27 @@ class JQueryMobile(BrowserView):
     """Default browserview"""
     interface.implements(interfaces.IJqueryMobileView)
 
-    def apply_to_context(self):
-        """Give a condition to know if the view apply to the context"""
-        return False
+    def __call__(self):
+        self.update()
+        return self.index()
+
+    def update(self):
+        pass
+
+    def pageid(self):
+        return '-'.join(self.context.getPhysicalPath())[1:]
+
+
+class Document(JQueryMobile):
+    index = ViewPageTemplateFile("document.pt")
 
 
 class Folder(JQueryMobile):
     """Specific version for listing"""
-    index = ViewPageTemplateFile('folder.pt')
+    content_template = ViewPageTemplateFile('content_folder.pt')
 
-    def apply_to_context(self):
-        return True
-
-    def __call__(self):
-        return self.index()
+    def content(self):
+        return self.content_template(self)
 
     def item_href(self, item_type, use_view_action, item_url):
         if item_type in use_view_action:

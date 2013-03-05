@@ -1,0 +1,13 @@
+<ul data-role="listview" data-theme="c">
+  <metal:block use-macro="context/folder_listing/macros/entries">
+   <metal:entry fill-slot="entry">
+     <li><a href="#"
+            class="summary url"
+            tal:attributes="href python:view.item_href(item_type, use_view_action, item_url);"
+            tal:content="item_title_or_id">
+             Item Title
+         </a>
+     </li>
+   </metal:entry>
+  </metal:block>
+</ul>

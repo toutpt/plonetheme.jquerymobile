@@ -4,21 +4,23 @@
     i18n_domain="plonetheme.jquerymobile">
 
    <browser:page
-     for="*"
-     name="jquerymobile-resource-include-condition"
-     class=".resource.IncludeCondition"
+     for="Products.ATContentTypes.interfaces.IATDocument"
+     name="jquerymobile_view"
+     class=".jquerymobile.Document"
      permission="zope2.View"
      />
+
    <browser:page
      for="plone.app.folder.folder.IATUnifiedFolder"
-     name="jquerymobile"
+     name="jquerymobile_view"
      class=".jquerymobile.Folder"
      permission="zope2.View"
      />
    <browser:page
      for="Products.ATContentTypes.interfaces.IATTopic"
-     name="jquerymobile"
+     name="jquerymobile_view"
      class=".jquerymobile.Topic"
      permission="zope2.View"
      />
+
 </configure>

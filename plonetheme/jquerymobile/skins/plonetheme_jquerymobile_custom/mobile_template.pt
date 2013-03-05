@@ -1,0 +1,64 @@
+<metal:page define-macro="master">
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="collective.js.jquerymobile"
+    tal:define="portal_state context/@@plone_portal_state;
+        context_state context/@@plone_context_state;
+        plone_view context/@@plone;
+        lang portal_state/language;
+        view nocall:view | nocall: plone_view;
+        dummy python: plone_view.mark_view(view);
+        portal_url portal_state/portal_url;
+        checkPermission nocall: context/portal_membership/checkPermission;
+        site_properties context/portal_properties/site_properties;
+        ajax_load request/ajax_load | nothing;
+        ajax_include_head request/ajax_include_head | nothing;
+        dummy python:request.RESPONSE.setHeader('X-UA-Compatible', 'IE=edge,chrome=1');">
+  <head>
+    <base tal:attributes="href string:${context/absolute_url}/@@jquerymobile_view">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="generator" content="Plone - http://plone.org" />
+    <title tal:content="context/Title"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" tal:attributes="href string:${portal_state/portal_url}/++resource++collective.js.jquerymobile/jquery.mobile.css?version=1.8.3">
+    <script type="text/javascript" tal:attributes="src string:${portal_state/portal_url}/++resource++plone.app.jquery.js?version=1.8.3"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_state/portal_url}/++resource++collective.js.jquerymobile/jquery.mobile.js?version=1.3.0"></script>
+  </head>
+<body>
+
+<div data-role="page" tal:attributes="id view/pageid">
+
+    <div data-role="header">
+        <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/@@example.collective.js.jquerymobile" data-icon="home" data-iconpos="left" class="ui-btn-left">
+            Home
+        </a>
+        <a data-role="button" tal:attributes="href string:${portal_state/navigation_root_url}/menu" data-icon="bars" data-iconpos="left" class="ui-btn-right">
+            Menu
+        </a>
+        <h4>Web site title</h4>
+    </div>
+
+    <div data-role="content">
+      <h1 tal:content="context/Title">Foo</h1>
+      <metal:text define-slot="content-core" tal:content="nothing">
+          Page body text
+      </metal:text>
+    </div>
+
+    <div data-role="footer">
+        &nbsp;
+    </div>
+
+</div>
+
+</body>
+</html>
+</metal:page>

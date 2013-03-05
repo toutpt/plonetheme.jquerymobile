@@ -33,31 +33,12 @@
 
   <include package=".browser" />
 
-  <!-- override plone.browserlayer to add the theme layer only on setting.domain -->
-  <subscriber
-      for="Products.CMFCore.interfaces.ISiteRoot
-           zope.app.publication.interfaces.IBeforeTraverseEvent"
-      handler=".layer.mark_layer"
-      />
-  <browser:page
-      name="plonetheme-jquerymobile-controlpanel"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      permission="cmf.ManagePortal"
-      class=".controlpanel.ThemeSettingsControlPanelView"
-      />
   <genericsetup:registerProfile
       name="default"
       title="JQueryMobile Theme"
       directory="profiles/default"
       description='Extension profile for the "JQueryMobile Theme" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-  <browser:viewlet
-      name="plone.resourceregistries"
-      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-      template="resourceregistries.pt"
-      permission="zope2.View"
-      layer="plonetheme.jquerymobile.interfaces.IThemingLayer"
       />
 
 </configure>
