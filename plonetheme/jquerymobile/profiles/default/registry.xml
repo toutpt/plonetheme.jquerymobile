@@ -1,4 +1,15 @@
 <registry>
-  <!-- plone.app.theming settings -->
-  <records interface="plonetheme.jquerymobile.interfaces.IThemeSettings" />
+
+  <!-- resources config -->
+  <record name="Products.ResourceRegistries.interfaces.settings.IResourceRegistriesSettings.resourceBundlesForThemes">
+    <value>
+      <element key="plonetheme.jquerymobile">
+        <element>polyfill</element>
+        <element>jquery</element>
+        <element>jquerymobile</element>
+        <element>picturefill</element>
+      </element>
+    </value>
+  </record>
+
 </registry>

@@ -9,9 +9,12 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="plonetheme.jquerymobile">
 
-  <five:registerPackage package="." initialize=".initialize" />
-  <include package="collective.monkeypatcher"/>
-  <include package="Products.CMFCore" file="permissions.zcml"/>
+  <includeDependencies package="."/>
+
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:jbot directory="jbot" layer=".layer.Layer" />
+
 
   <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
   <i18n:registerTranslations directory="locales" />
@@ -24,6 +27,13 @@
       directory="profiles/default"
       description='Extension profile for the "JQueryMobile Theme" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <include file="upgrades.zcml" />
+
+  <interface
+      interface=".layer.Layer"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="plonetheme.jquerymobile"
       />
 
 </configure>

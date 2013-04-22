@@ -26,10 +26,12 @@ setup(name='plonetheme.jquerymobile',
       install_requires=[
           'setuptools',
           'plone.browserlayer',
-          'plone.app.theming',
           'plone.app.registry',
+          'plone.app.modernizr',
           'collective.js.jquerymobile',
           'collective.monkeypatcher',
+          'collective.picturefill',
+          'z3c.jbot',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

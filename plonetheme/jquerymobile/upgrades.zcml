@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plonetheme.jquerymobile">
+
+    <upgradeStep
+        source="*"
+        destination="1002"
+        title="Upgrade"
+        description=""
+        profile="plonetheme.jquerymobile:default"
+        handler=".upgrades.common"
+        />
+
+</configure>

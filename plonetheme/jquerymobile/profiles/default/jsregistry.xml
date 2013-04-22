@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
-<!--
- <javascript cacheable="True" compression="none"
-     cookable="True" enabled="1" expression="context/@@jquerymobile-include-condition"
-     id="++resource++jquery.mobile/jquery.mobile-1.0a2.min.js" />
--->
+
+ <javascript id="++resource++collective.js.jquerymobile/jquery.mobile.js" bundle="jquerymobile" />
+ <javascript id="++resource++plonetheme.jquerymobile/theme.js" bundle="jquerymobile" />
+
 </object>

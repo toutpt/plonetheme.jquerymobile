@@ -3,31 +3,22 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plonetheme.jquerymobile">
 
-   <browser:page
-     for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
-     name="jquerymobile_view"
-     class=".jquerymobile.PloneSite"
-     permission="zope2.View"
-     />
+  <include package="Products.CMFCore" file="permissions.zcml" />
+  <include package=".viewlets" />
 
-   <browser:page
-     for="Products.ATContentTypes.interfaces.IATDocument"
-     name="jquerymobile_view"
-     class=".jquerymobile.Document"
-     permission="zope2.View"
-     />
+  <browser:resourceDirectory
+      directory="resources"
+      name="plonetheme.jquerymobile"
+      layer="plonetheme.jquerymobile.layer.Layer" />
 
-   <browser:page
-     for="plone.app.folder.folder.IATUnifiedFolder"
-     name="jquerymobile_view"
-     class=".jquerymobile.Folder"
-     permission="zope2.View"
-     />
-   <browser:page
-     for="Products.ATContentTypes.interfaces.IATTopic"
-     name="jquerymobile_view"
-     class=".jquerymobile.Topic"
-     permission="zope2.View"
-     />
+  <browser:page
+      for="*"
+      name="ploneform-macros"
+      class="plone.app.z3cform.templates.Macros"
+      template="templates/ploneform-macros.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      allowed_interface="zope.interface.common.mapping.IItemMapping"
+      permission="zope.Public"
+      />
 
 </configure>
