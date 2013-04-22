@@ -49,7 +49,6 @@
            data-iconpos="left" class="ui-btn-right">
             Column 2
         </a>
-        <h4><a tal:content="view/site_title" tal:attributes="href string:${portal_state/navigation_root_url}/@@jquerymobile_view">Web site title</a></h4>
     </div>
 
     <div data-role="content">
