@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.0dev'
+extra_requires = {'test': ['plone.app.testing', 'plone.app.robotframework']}
 
 setup(name='plonetheme.jquerymobile',
       version=version,
@@ -14,10 +15,10 @@ setup(name='plonetheme.jquerymobile',
         "Framework :: Plone",
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='jeanmichel.francois@makina-corpus.com',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='plone theme jquery mobile',
+      author='JeanMichel FRANCOIS aka toutpt',
+      author_email='toutpt@gmail.com',
+      url='https://github.com/toutpt/plonetheme.jquerymobile',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['plonetheme'],
@@ -34,6 +35,7 @@ setup(name='plonetheme.jquerymobile',
           'z3c.jbot',
           # -*- Extra requirements: -*-
       ],
+      extras_require=extra_requires,
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]

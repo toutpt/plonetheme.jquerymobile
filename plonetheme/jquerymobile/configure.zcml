@@ -15,7 +15,6 @@
 
   <browser:jbot directory="jbot" layer=".layer.Layer" />
 
-
   <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
   <i18n:registerTranslations directory="locales" />
 
