@@ -1,5 +1,5 @@
 import unittest2 as unittest
-from plonetheme.jquerymobile.tests import layer
+from plonetheme.jquerymobile import testing
 
 
 class UnitTestCase(unittest.TestCase):
@@ -8,9 +8,9 @@ class UnitTestCase(unittest.TestCase):
 
 class IntegrationTestCase(unittest.TestCase):
 
-    layer = layer.INTEGRATION
+    layer = testing.INTEGRATION
 
 
 class FunctionalTestCase(unittest.TestCase):
 
-    layer = layer.FUNCTIONAL
+    layer = testing.FUNCTIONAL

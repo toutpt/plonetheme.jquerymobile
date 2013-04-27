@@ -13,15 +13,13 @@ class Layer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         # Load ZCML
         import plonetheme.jquerymobile
+        import plonetheme.classic
+        self.loadZCML(package=plonetheme.classic)
         self.loadZCML(package=plonetheme.jquerymobile)
 
-#        z2.installProduct(app, 'plonetheme.jquerymobile')
-
     def setUpPloneSite(self, portal):
+        self.applyProfile(portal, 'plonetheme.classic:default')
         self.applyProfile(portal, 'plonetheme.jquerymobile:default')
-
-#    def tearDownZope(self, app):
-#        z2.uninstallProduct(app, 'plonetheme.jquerymobile')
 
 
 FIXTURE = Layer()

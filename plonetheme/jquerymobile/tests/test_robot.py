@@ -1,7 +1,7 @@
 import unittest
 
 import robotsuite
-from plonetheme.jquerymobile.tests.layer import ROBOT
+from plonetheme.jquerymobile.testing import ROBOT
 from plone.testing import layered
 
 

@@ -9,6 +9,4 @@ Test Teardown  Close all browsers
 
 Plone is installed
     Go to  ${PLONE_URL}
-    Import library Dialogs
-    Pause Execution
     Page should contain  Powered by Plone
