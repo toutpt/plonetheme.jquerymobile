@@ -32,20 +32,5 @@
     </div>
   </div>
   <div tal:replace="structure provider:plone.contentmenu"></div>
-  <div data-role="collapsible" data-collapsed="false" tal:condition="view/get_filters">
-    <h3 i18n:translate="">Filters</h3>
-    <div data-role="controlgroup">
-      <tal:filters tal:repeat="filter view/get_filters">
-        <a href="" data-role="button"
-           tal:content="filter/title"
-           tal:attributes="href filter/url"
-           i18n:translate="" tal:condition="not:filter/current">Filter name</a>
-        <a href="" data-role="button" data-icon="check"
-           tal:content="filter/title"
-           tal:attributes="href filter/url"
-           i18n:translate="" tal:condition="filter/current">Filter name</a>
-      </tal:filters>
-    </div>
-  </div>
 </div>
 </tal:editbar>
