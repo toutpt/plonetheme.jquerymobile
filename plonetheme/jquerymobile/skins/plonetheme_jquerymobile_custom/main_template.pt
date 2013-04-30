@@ -120,6 +120,7 @@
 
   <div data-role="panel" id="panel-left">
     <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
+    <div tal:replace="structure provider:plone.leftcolumn"></div>
   </div>
   <div data-role="panel" data-position="right" id="panel-right" >
     <div tal:content="structure provider:plonetheme.jquerymobile.panelright" />
