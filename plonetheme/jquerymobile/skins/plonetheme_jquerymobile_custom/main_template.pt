@@ -123,8 +123,8 @@
   </div>
   <div data-role="panel" data-position="right" id="panel-right" >
     <div tal:content="structure provider:plonetheme.jquerymobile.panelright" />
+    <div tal:replace="structure provider:plone.rightcolumn"></div>
   </div>
-
 </div>
 
 <script type="text/javascript">

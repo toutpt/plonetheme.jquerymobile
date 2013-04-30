@@ -34,15 +34,6 @@
       permission="zope2.View"
       class="plone.app.viewletmanager.manager.OrderedViewletManager"
       />
-  <browser:viewlet
-      name="plonetheme.jquerymobile.rightcolumn"
-      class=".panel.RightColumn"
-      template="templates/right-column.pt"
-      manager=".panel.IPanelLeft"
-      layer="plonetheme.jquerymobile.layer.Layer"
-      permission="zope2.View"
-      />
-      
 
   <!-- FOOTER -->
   <browser:viewletManager

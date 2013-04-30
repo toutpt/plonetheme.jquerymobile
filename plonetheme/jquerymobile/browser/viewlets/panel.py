@@ -42,7 +42,3 @@ class UserToolBar(common.ContentActionsViewlet, common.ContentViewsViewlet):
                     info["current"] = True
                 self.filters.append(info)
         return self.filters
-
-
-class RightColumn(common.ViewletBase):
-    index = ViewPageTemplateFile('templates/right-column.pt')
