@@ -1,0 +1,6 @@
+<tal:block tal:define="plone_view context/@@plone; sr python:plone_view.have_portlets('plone.rightcolumn', view);">
+ <div id="portal-column-two"
+    tal:condition="sr">
+    <tal:block replace="structure provider:plone.rightcolumn" />
+ </div>
+</tal:block>

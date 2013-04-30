@@ -12,10 +12,10 @@ class IPanelRight(IViewletManager):
     """A viewlet manager that sits on the left panel"""
 
 
-class AddContent(common.ContentActionsViewlet, common.ContentViewsViewlet):
+class UserToolBar(common.ContentActionsViewlet, common.ContentViewsViewlet):
     """add content"""
 
-    index = ViewPageTemplateFile('templates/addcontent.pt')
+    index = ViewPageTemplateFile('templates/usertoolbar.pt')
 
     def update(self):
         common.ContentActionsViewlet.update(self)
@@ -43,3 +43,6 @@ class AddContent(common.ContentActionsViewlet, common.ContentViewsViewlet):
                 self.filters.append(info)
         return self.filters
 
+
+class RightColumn(common.ViewletBase):
+    index = ViewPageTemplateFile('templates/right-column.pt')
