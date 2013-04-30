@@ -132,9 +132,9 @@
 
                     <metal:actions-slot define-slot="actions">
                         <metal:define define-macro="actions">
-                            <div class="formControls" tal:condition="view/actions/values|nothing">
+                            <div class="formControls" data-role="controlgroup" data-type="horizontal" tal:condition="view/actions/values|nothing">
                                 <tal:block repeat="action view/actions/values">
-                                    <input type="submit" tal:replace="structure action/render" />
+                                    <input type="submit" tal:replace="structure action/render"/>
                                 </tal:block>
                             </div>
                         </metal:define>
