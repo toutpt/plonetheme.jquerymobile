@@ -1,0 +1,39 @@
+<tal:block condition="view/show"
+           i18n:domain="plone">
+
+<div data-role="collapsible" class="portlet portletLogin"
+    tal:condition="view/available">
+
+    <h4 i18n:translate="box_sign_in">Log in</h4>
+    <ul data-role="listview">
+     <li><a href="#"
+           class="tile"
+           tal:attributes="href view/login_form"
+           i18n:translate="box_sign_in">Log in</a></li>
+
+      <li tal:condition="view/can_request_password">
+        <a href="mail_password_form"
+           class="tile"
+           tal:attributes="href view/mail_password_form">
+           <span tal:omit-tag="" i18n:translate="box_forgot_password_option">Forgot your password?</span>
+        </a>
+      </li>
+
+    <li tal:condition="view/can_register">
+        <a href=""
+           class="tile"
+           tal:attributes="href view/join_action">
+            <span tal:omit-tag="" i18n:translate="box_new_user_option">New user?</span>
+        </a>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </li>
+    </ul>
+</div>
+
+<div tal:condition="not:view/available" i18n:translate="login_portlet_disabled">
+    Cookie authentication is disabled.
+    Login portlet not available.
+</div>
+
+</tal:block>

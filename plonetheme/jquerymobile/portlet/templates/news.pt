@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<div data-role="collapsible"  class="portlet portletNews"
+    tal:define="all_news_link view/all_news_link"
+    i18n:domain="plone">
+
+    <h4 i18n:translate="box_news">News</h4>
+
+    <ul data-role="listview">
+    <tal:newsitems  tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                plone_view context/@@plone;"
+                    tal:repeat="obj view/published_news_items">
+    <li tal:define="oddrow repeat/obj/odd;">
+        <a href=""
+           class="tile"
+           tal:attributes="href obj/getURL;
+                           title obj/Description">
+            <span tal:replace="obj/pretty_title_or_id">
+            Plone 2.1 announced!
+            </span>
+            <span class="portletItemDetails"
+                  tal:content="python:toLocalizedTime(obj.Date)">May 5</span>
+         </a>
+
+    </li>
+    </tal:newsitems>
+
+    <li
+         tal:condition="view/all_news_link">
+        <a href=""
+           tal:attributes="href view/all_news_link"
+           i18n:translate="box_more_news_link">
+          More news&hellip;
+        </a>
+    </li>
+    </ul>
+</div>
+</html>

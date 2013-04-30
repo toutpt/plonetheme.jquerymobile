@@ -1,0 +1,60 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plonetheme.jquerymobile">
+
+  <include package="plone.app.portlets"/>
+
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.calendar.ICalendarPortlet"
+      template="templates/calendar.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.events.IEventsPortlet"
+      template="templates/events.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.language.ILanguagePortlet"
+      template="templates/language.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.login.ILoginPortlet"
+      template="templates/login.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+      template="templates/navigation.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.news.INewsPortlet"
+      template="templates/news.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.recent.IRecentPortlet"
+      template="templates/recent.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.review.IReviewPortlet"
+      template="templates/review.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.rss.IRSSPortlet"
+      template="templates/rss.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.search.ISearchPortlet"
+      template="templates/search.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+
+</configure>
