@@ -144,7 +144,8 @@
                       tal:replace="structure context/@@authenticator/authenticator" />
                     <metal:block define-slot="formbottom" />
                 <script type="text/javascript">
-                $('.formfieldset').first().attr('data-collapsed', 'false')
+                $('.formfieldset').first().attr('data-collapsed', 'false');
+                $('#form-buttons-save').attr('data-theme', 'b');
                 </script>
                 </form>
             </metal:define>
