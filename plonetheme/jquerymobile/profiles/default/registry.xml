@@ -2,7 +2,7 @@
 
   <!-- resources config -->
   <record name="Products.ResourceRegistries.interfaces.settings.IResourceRegistriesSettings.resourceBundlesForThemes">
-    <value>
+    <value purge="False">
       <element key="plonetheme.jquerymobile">
         <element>polyfill</element>
         <element>jquery</element>
