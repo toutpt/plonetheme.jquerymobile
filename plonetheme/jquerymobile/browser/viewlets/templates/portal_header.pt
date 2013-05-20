@@ -1,0 +1,7 @@
+<div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+  <div tal:replace="structure provider:plonetheme.jquerymobile.header.left" />
+</div>
+<div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+  <div tal:replace="structure provider:plonetheme.jquerymobile.header.right" />
+</div>
+<h1>&nbsp;</h1>

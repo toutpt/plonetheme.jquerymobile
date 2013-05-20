@@ -2,19 +2,71 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plonetheme.jquerymobile">
-
-  <!-- LEFT PANEL -->
+  <!-- MANAGER -->
   <browser:viewletManager
       name="plonetheme.jquerymobile.panelleft"
-      provides=".panel.IPanelLeft"
+      provides=".manager.IPanelLeft"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.panelright"
+      provides=".manager.IPanelRight"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.header.left"
+      provides=".manager.IHeaderLeft"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.header.right"
+      provides=".manager.IHeaderRight"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.footer"
+      provides=".manager.IFooter"
       permission="zope2.View"
       class="plone.app.viewletmanager.manager.OrderedViewletManager"
       />
 
+
+  <!-- header.leftaction.panel -->
+  <browser:viewlet
+      name="plonetheme.jquerymobile.header.leftaction.panel"
+      class=".header.PanelLeftAction"
+      manager=".manager.IHeaderLeft"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
+  <!-- header.leftaction.sections -->
+  <browser:viewlet
+      name="plonetheme.jquerymobile.header.leftaction.sections"
+      class=".header.GlobalSections"
+      manager=".manager.IHeaderLeft"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
+  <!-- header.rightaction.panel -->
+  <browser:viewlet
+      name="plonetheme.jquerymobile.header.rightaction.panel"
+      class=".header.PanelRightAction"
+      manager=".manager.IHeaderRight"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
+
+
+  <!-- LEFT PANEL -->
+
   <browser:viewlet
       name="plonetheme.jquerymobile.usertoolbar"
       class=".panel.UserToolBar"
-      manager=".panel.IPanelLeft"
+      manager=".manager.IPanelLeft"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
@@ -22,25 +74,18 @@
       name="plone.personalbar"
       class="plone.app.layout.viewlets.common.PersonalBarViewlet"
       template="templates/personalbar.pt"
-      manager=".panel.IPanelLeft"
+      manager=".manager.IPanelLeft"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
 
-  <!-- RIGHT PANEL -->
-  <browser:viewletManager
-      name="plonetheme.jquerymobile.panelright"
-      provides=".panel.IPanelRight"
-      permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
-      />
+    <browser:viewlet
+        name="plone.header"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        template="templates/portal_header.pt"
+        permission="zope2.View"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
 
-  <!-- FOOTER -->
-  <browser:viewletManager
-      name="plonetheme.jquerymobile.footer"
-      provides=".footer.IFooter"
-      permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
-      />
 
 </configure>

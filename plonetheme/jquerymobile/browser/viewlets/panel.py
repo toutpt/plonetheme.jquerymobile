@@ -1,15 +1,6 @@
-from zope.viewlet.interfaces import IViewletManager
 from plone.app.layout.viewlets import common
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
-
-
-class IPanelLeft(IViewletManager):
-    """A viewlet manager that sits on the left panel"""
-
-
-class IPanelRight(IViewletManager):
-    """A viewlet manager that sits on the left panel"""
 
 
 class UserToolBar(common.ContentActionsViewlet, common.ContentViewsViewlet):

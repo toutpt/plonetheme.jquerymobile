@@ -55,19 +55,7 @@
 <div data-role="page" tal:attributes="id uuid" class="page">
 
   <div data-role="header">
-    <metal:block define-slot="header">
-       <a tal:attributes="href string:#panel-left"
-         data-role="button" data-icon="bars"
-         data-iconpos="left" class="ui-btn-left">
-         Actions
-      </a>
-      <a tal:attributes="href string:#panel-right"
-         data-role="button" data-icon="grid"
-         data-iconpos="right" class="ui-btn-right">
-          Extra
-      </a>
-      <h1>&nbsp;</h1>
-    </metal:block>
+    <div tal:replace="structure provider:plone.portaltop" />
   </div>
 
   <div data-role="content">

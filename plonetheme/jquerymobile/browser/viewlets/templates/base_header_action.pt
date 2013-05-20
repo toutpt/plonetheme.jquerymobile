@@ -1,0 +1,5 @@
+<a data-role="button"
+   tal:content="view/label"
+   tal:attributes="href view/href;
+       data-icon view/icon;
+       data-iconpos view/iconpos;"></a>
