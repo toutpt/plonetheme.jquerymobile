@@ -1,0 +1,43 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonetheme.jquerymobile">
+
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.panelleft"
+      provides=".manager.IPanelLeft"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.panelright"
+      provides=".manager.IPanelRight"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.header.left"
+      provides=".manager.IHeaderLeft"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.header.right"
+      provides=".manager.IHeaderRight"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.footer"
+      provides=".manager.IFooter"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
+      name="plonetheme.jquerymobile.belowcontent"
+      provides=".manager.IBelowContent"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+
+</configure>

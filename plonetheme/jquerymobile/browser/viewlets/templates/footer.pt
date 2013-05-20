@@ -1,0 +1,3 @@
+  <div data-role="footer" class="ui-bar">
+    <div tal:content="structure provider:plonetheme.jquerymobile.footer" />
+  </div>
