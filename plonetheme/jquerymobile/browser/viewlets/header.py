@@ -1,4 +1,7 @@
-from plone.app.layout.viewlets.common import ViewletBase
+from plone.app.layout.viewlets.common import (
+    ViewletBase,
+    GlobalSectionsViewlet,
+)
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plonetheme.jquerymobile import i18n
 _ = i18n._
@@ -33,8 +36,5 @@ class PanelRightAction(BaseHeaderAction):
     label = _(u"Open right panel")
 
 
-class GlobalSections(BaseHeaderAction):
-    href = "string:#portal-sections"
-    icon = "group"
-    iconpos = "notext"
-    label = _(u"global sections")
+class GlobalSections(GlobalSectionsViewlet):
+    index = ViewPageTemplateFile("templates/sections.pt")

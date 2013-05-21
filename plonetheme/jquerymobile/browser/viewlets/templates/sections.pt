@@ -1,0 +1,9 @@
+<select name="globalsections" id="globalsections" onchange="window.location = this.options[this.selectedIndex].value;"
+    data-native-menu="false" data-iconpos="notext" data-filter="true" data-force-dialog="true"
+    tal:define="portal_tabs view/portal_tabs;
+        selected_tab python:view.selected_portal_tab">
+<tal:option tal:repeat="tab portal_tabs">
+    <option tal:condition="python:selected_tab==tab['id']" selected="selected" tal:attributes="value tab/url" tal:content="tab/name">Standard: 7 day</option>
+    <option tal:condition="python:selected_tab!=tab['id']" tal:attributes="value tab/url" tal:content="tab/name">Standard: 7 day</option>
+</tal:option>
+</select>
