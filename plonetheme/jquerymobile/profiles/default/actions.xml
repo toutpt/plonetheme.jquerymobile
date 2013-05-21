@@ -5,7 +5,7 @@
  <object name="object" meta_type="CMF Action Category">
   <property name="title"></property>
   <object name="portlets" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="manage_portlets_link"></property>
+   <property name="title">manage_portlets_link</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object_url}/@@manage-portlets</property>
    <property name="icon_expr"></property>
@@ -16,8 +16,8 @@
    <property name="visible">True</property>
   </object>
 
-  <object name="portlets" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="label_history"></property>
+  <object name="history" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title">label_history</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object_url}/@@historyview</property>
    <property name="icon_expr"></property>
