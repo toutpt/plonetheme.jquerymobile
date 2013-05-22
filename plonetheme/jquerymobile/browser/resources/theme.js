@@ -1,6 +1,13 @@
 $.mobile.ajaxEnabled = false;
-$(document).on("mobileinit", function(){
-
+$(document).on("pagebeforecreate", function(){
+	var formselector = ".formControls span";
+	if ($(formselector ).length == 0){
+		formselector = ".formControls";
+	}
+	if ($(formselector).attr("data-role").length == 0){
+		$(formselector).attr("data-role", "controlgroup").attr("data-type", "horizontal");
+		$(formselector + " input[type='submit'][name='form.actions.save']").attr("data-theme", "b");
+	}
 });
 
 $( document ).on( "pageinit", ".page", function() {
