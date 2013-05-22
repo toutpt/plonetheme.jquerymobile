@@ -21,6 +21,14 @@ class BaseHeaderAction(ViewletBase):
     iconpos = "notext"
     label = ""
 
+    def render(self):
+        if self.is_available():
+            return self.index()
+        return ""
+
+    def is_available(self):
+        return True
+
 
 class PanelLeftAction(BaseHeaderAction):
     href = "string:#panel-left"
@@ -34,6 +42,10 @@ class PanelRightAction(BaseHeaderAction):
     icon = "grid"
     iconpos = "notext"
     label = _(u"Open right panel")
+
+    def is_available(self):
+        plone_view = self.context.restrictedTraverse('@@plone')
+        return plone_view.have_portlets('plone.rightcolumn', self.context)
 
 
 class GlobalSections(GlobalSectionsViewlet):

@@ -33,3 +33,11 @@ class UserToolBar(common.ContentActionsViewlet, common.ContentViewsViewlet):
                     info["current"] = True
                 self.filters.append(info)
         return self.filters
+
+
+class RightPanel(common.ViewletBase):
+    def render(self):
+        plone_view = self.context.restrictedTraverse('@@plone')
+        if plone_view.have_portlets('plone.rightcolumn', self.context):
+            return self.index()
+        return ""

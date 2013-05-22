@@ -75,6 +75,7 @@
     <browser:viewlet
         name="plonetheme.jquerymobile.panel.right"
         template="templates/panel_right.pt"
+        class=".panel.RightPanel"
         manager=".manager.IBelowContent"
         layer="plonetheme.jquerymobile.layer.Layer"
         permission="zope2.View"
