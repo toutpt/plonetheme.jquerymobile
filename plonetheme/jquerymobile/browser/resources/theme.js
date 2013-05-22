@@ -1,12 +1,21 @@
 $.mobile.ajaxEnabled = false;
 $(document).on("pagebeforecreate", function(){
+	/*
+	 * This function make formcontrols actions look nice in jqm
+	 * */
 	var formselector = ".formControls span";
 	if ($(formselector ).length == 0){
 		formselector = ".formControls";
 	}
-	if ($(formselector).attr("data-role").length == 0){
-		$(formselector).attr("data-role", "controlgroup").attr("data-type", "horizontal");
-		$(formselector + " input[type='submit'][name='form.actions.save']").attr("data-theme", "b");
+	if ($(formselector).length != 0){
+		var attr = $(formselector).attr("data-role");
+		if (typeof attr == 'undefined' || attr == false){
+			$(formselector).attr("data-role", "controlgroup").attr("data-type", "horizontal");
+			var actionsNames = ["form.actions.save", "form.button.Publish"];
+			for (var i = 0; i < actionsNames.length; i++) {
+				$(formselector + " input[type='submit'][name='"+actionsNames[i] + "']").attr("data-theme", "b");
+			}
+		}
 	}
 });
 
