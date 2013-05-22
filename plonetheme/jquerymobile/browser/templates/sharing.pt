@@ -121,17 +121,20 @@
                             <tal:block define="entry_role python:entry['roles'][role['id']]">
                                 <img tal:condition="python:entry_role == 'global'" tal:replace="structure context/site_icon.png" />
                                 <img tal:condition="python:entry_role == 'acquired'" tal:replace="structure context/confirm_icon.png" />
-                                <tal:block condition="python:entry_role in (True, False)">
-                                  <input class="noborder"
-                                         type="checkbox"
-                                         value="True"
-                                         tal:define="name string:entries.role_${role/id}:records;
+                                <tal:block tal:define="name string:entries.role_${role/id}:records;
                                                  checked python:entry_role and 'checked' or None;
-                                                 disabled python:disabled or None"
+                                                 disabled python:disabled or None;
+                                                 id string:${entry/id}-${role/id};"
+                                           condition="python:entry_role in (True, False)">
+                                  <input type="checkbox"
+                                         value="True"
                                          tal:attributes="name name;
                                                          checked checked;
-                                                         disabled disabled"
+                                                         disabled disabled;
+                                                         id id;"
                                          />
+                                  <label tal:attributes="for id;"
+                                      tal:content="role/title"></label>
                                 </tal:block>
                             </tal:block>
                         </td>
