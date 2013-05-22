@@ -3,15 +3,16 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plonetheme.jquerymobile">
 
-  <include package="Products.CMFCore" file="permissions.zcml" />
-  <include package=".viewlets" />
+    <include package="Products.CMFCore" file="permissions.zcml" />
+    <include package="plone.app.workflow"/>
+    <include package=".viewlets" />
 
-  <browser:resourceDirectory
+    <browser:resourceDirectory
       directory="resources"
       name="plonetheme.jquerymobile"
       layer="plonetheme.jquerymobile.layer.Layer" />
 
-  <browser:page
+    <browser:page
       for="*"
       name="ploneform-macros"
       class="plone.app.z3cform.templates.Macros"
@@ -20,5 +21,13 @@
       allowed_interface="zope.interface.common.mapping.IItemMapping"
       permission="zope.Public"
       />
+
+    <browser:page
+        name="sharing"
+        for="*"
+        class="plone.app.workflow.browser.sharing.SharingView"
+        template="templates/sharing.pt"
+        permission="plone.DelegateRoles"
+        />
 
 </configure>
