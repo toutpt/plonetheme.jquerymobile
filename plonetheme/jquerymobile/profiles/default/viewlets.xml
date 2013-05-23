@@ -3,4 +3,7 @@
   <order manager="plonetheme.jquerymobile.header.left" skinname="*">
     <viewlet name="plonetheme.jquerymobile.header.leftaction.panel" insert-before="*"/>
   </order>
+  <order manager="plone.abovecontent" skinname="*">
+    <viewlet name="plonetheme.jquerymobile.global_statusmessage" insert-before="*"/>
+  </order>
 </object>

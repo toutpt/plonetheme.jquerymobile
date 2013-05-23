@@ -31,9 +31,16 @@
       permission="zope2.View"
       />
 
+  <!-- global_statusmessage -->
+  <browser:viewlet
+      name="plonetheme.jquerymobile.global_statusmessage"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      template="templates/global_statusmessage.pt"
+      permission="zope2.View"
+      />
 
-  <!-- LEFT PANEL -->
-
+  <!-- plonetheme.jquerymobile.usertoolbar -->
   <browser:viewlet
       name="plonetheme.jquerymobile.usertoolbar"
       class=".panel.UserToolBar"
@@ -41,6 +48,7 @@
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
+  <!-- plone.personalbar -->
   <browser:viewlet
       name="plone.personalbar"
       class="plone.app.layout.viewlets.common.PersonalBarViewlet"
@@ -80,6 +88,5 @@
         layer="plonetheme.jquerymobile.layer.Layer"
         permission="zope2.View"
         />
-
 
 </configure>

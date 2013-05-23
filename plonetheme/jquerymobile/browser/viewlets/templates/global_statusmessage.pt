@@ -1,0 +1,3 @@
+<div metal:use-macro="context/global_statusmessage/macros/portal_message">
+ Status message
+</div>

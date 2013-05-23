@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+
+<body>
+
+<tal:block i18n:domain="plone"
+           metal:define-macro="portal_message">
+
+    <tal:statusmsg tal:define="messages python:context.plone_utils.showPortalMessages()"
+                   tal:repeat="message messages">
+
+    <div tal:define="mtype message/type | nothing; jqmtheme python: mtype=='info' and 'b' or 'c'; icon python: mtype=='info' and 'info' or 'alert'"
+         tal:attributes="class string:ui-bar portalMessage portalMessage-${mtype} ui-bar-${jqmtheme};">
+        <h3 tal:content="message/message | nothing"
+            i18n:translate="">
+            The status message.
+        </h3>
+        <div tal:attributes="class string:ui-icon ui-icon-${icon}"></div>
+    </div>
+
+    </tal:statusmsg>
+</tal:block>
+
+</body>
+</html>

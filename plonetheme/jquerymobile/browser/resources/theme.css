@@ -1,4 +1,13 @@
 .ui-header .ui-controlgroup .ui-btn-icon-notext .ui-btn-inner .ui-icon {
-top: 15%;
-left: 15%;
+	top: 15%;
+	left: 15%;
+}
+.portalMessage-error h3{
+	color: red;
+}
+.ui-bar.portalMessage h3{
+	margin-left:20px;
+}
+.portalMessage .ui-icon{
+	float: left;
 }
