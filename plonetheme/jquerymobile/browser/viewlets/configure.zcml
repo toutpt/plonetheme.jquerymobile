@@ -88,5 +88,12 @@
         layer="plonetheme.jquerymobile.layer.Layer"
         permission="zope2.View"
         />
+  <browser:viewlet
+      name="plonetheme.jquerymobile.shorcuts"
+      template="templates/shortcuts.pt"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
 
 </configure>
