@@ -11,5 +11,5 @@
     <a tal:attributes="href string:${context_state/canonical_object_url}/folder_contents" data-role="button" tal:condition="python:can_list and is_folder" i18n:translate="Contents">Contents</a>
     <a tal:attributes="href string:${context/absolute_url}/edit" data-role="button" i18n:translate="label_edit">Edit</a>
 </div>
-<a tal:attributes="href string:${context_state/object_url}" data-role="button" tal:condition="not: isview" i18n:translate="label_view">View</a>
+<a tal:attributes="href string:${context_state/view_url}" data-role="button" tal:condition="not: isview" i18n:translate="label_view">View</a>
 </tal:block>
