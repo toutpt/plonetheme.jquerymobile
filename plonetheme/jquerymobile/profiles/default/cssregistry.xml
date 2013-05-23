@@ -12,5 +12,10 @@
       applyPrefix="true"
       media=""
       />
+  <stylesheet id="++resource++plonetheme.jquerymobile/fontawesome.css"
+      bundle="jquerymobile"
+      applyPrefix="true"
+      media=""
+      />
 
 </object>

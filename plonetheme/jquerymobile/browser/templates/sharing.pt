@@ -79,8 +79,7 @@
                       <th class="nosort"
                           data-priority="repeat/index/role"
                           tal:repeat="role available_roles"
-                          i18n:translate=""
-                          tal:content="role/title" />
+                          />
                   </tr>
               </thead>
 

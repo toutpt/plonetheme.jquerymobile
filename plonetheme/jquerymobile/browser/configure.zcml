@@ -29,5 +29,11 @@
         template="templates/sharing.pt"
         permission="plone.DelegateRoles"
         />
+    <browser:page
+        name="test-icons"
+        for="*"
+        template="templates/test-icons.pt"
+        permission="cmf.ManagePortal"
+        />
 
 </configure>
