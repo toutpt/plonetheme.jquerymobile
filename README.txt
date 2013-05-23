@@ -16,16 +16,17 @@ Done
 * viewlet: footer
 * viewlet: global section
 * viewlet: plone.leftcolumn & plone.rightcolumn
+* viewlet: status message
 * add font awesome 3.1.1
+* viewlet: shortcuts (folder_contents/edit actions)
 
 Todo
 ====
 
-* viewlet: status message
+* widget: file in edit mode are blocked (ui-disabled class)
 * widget: datetime for archetypes (html5)
 * widget: querystring
-* widget: file in edit mode are blocked (ui-disabled class)
 * form: manage portlets
-* page: controlpanels
+* page: controlpanel users
 * form: content_status_history
 * form: select_default_page
