@@ -27,6 +27,7 @@
         for="*"
         class="plone.app.workflow.browser.sharing.SharingView"
         template="templates/sharing.pt"
+        layer="plonetheme.jquerymobile.layer.Layer"
         permission="plone.DelegateRoles"
         />
     <browser:page
@@ -34,6 +35,7 @@
         for="*"
         template="templates/test-icons.pt"
         permission="cmf.ManagePortal"
+        layer="plonetheme.jquerymobile.layer.Layer"
         />
 
 </configure>
