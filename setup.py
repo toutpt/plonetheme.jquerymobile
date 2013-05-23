@@ -43,6 +43,7 @@ setup(name='plonetheme.jquerymobile',
           'collective.fontawesome',
           'collective.monkeypatcher',
           'collective.picturefill',
+          'collective.z3cform.html5widgets',
           'z3c.jbot',
           # -*- Extra requirements: -*-
       ],
