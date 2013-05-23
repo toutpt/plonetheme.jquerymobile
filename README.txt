@@ -19,12 +19,12 @@ Done
 * viewlet: status message
 * add font awesome 3.1.1
 * viewlet: shortcuts (folder_contents/edit actions)
+* widget: file in edit mode are blocked (ui-disabled class)
+* widget: datetime for archetypes relooking
 
 Todo
 ====
 
-* widget: file in edit mode are blocked (ui-disabled class)
-* widget: datetime for archetypes (html5)
 * widget: querystring
 * form: manage portlets
 * page: controlpanel users
