@@ -73,4 +73,5 @@ parts
 develop-eggs
 var
 src
+var.tar.bz2
 apache.conf
