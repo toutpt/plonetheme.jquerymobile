@@ -56,4 +56,19 @@
         layer="plonetheme.jquerymobile.layer.Layer"
         />
 
+    <browser:page
+        name="updated_search"
+        class="plone.app.search.browser.Search"
+        permission="zope2.View"
+        for="Products.CMFCore.interfaces.IFolderish"
+        template="templates/search_updated.pt"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
+
+    <browser:resource
+        name="search.js"
+        file="resources/search.js"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
+
 </configure>

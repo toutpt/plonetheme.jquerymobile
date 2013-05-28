@@ -30,6 +30,13 @@
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
+  <browser:viewlet
+      name="plonetheme.jquerymobile.header.rightaction.search"
+      class=".header.SearchRightAction"
+      manager=".manager.IHeaderRight"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
 
   <!-- global_statusmessage -->
   <browser:viewlet

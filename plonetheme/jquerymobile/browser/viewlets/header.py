@@ -1,3 +1,4 @@
+from zope import component
 from plone.app.layout.viewlets.common import (
     ViewletBase,
     GlobalSectionsViewlet,
@@ -46,6 +47,20 @@ class PanelRightAction(BaseHeaderAction):
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
         return plone_view.have_portlets('plone.rightcolumn', self.context)
+
+
+class SearchRightAction(BaseHeaderAction):
+    icon = "search"
+    iconpos = "notext"
+    label = _(u"Search")
+
+    @property
+    def href(self):
+        plone_portal_state = component.getMultiAdapter(
+            (self.context, self.request),
+            name="plone_portal_state"
+        )
+        return plone_portal_state.navigation_root_url() + '/@@search'
 
 
 class GlobalSections(GlobalSectionsViewlet):
