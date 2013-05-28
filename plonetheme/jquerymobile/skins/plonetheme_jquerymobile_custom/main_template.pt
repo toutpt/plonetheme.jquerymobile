@@ -58,7 +58,7 @@
     <div tal:replace="structure provider:plone.portaltop" />
   </div>
 
-  <div data-role="content">
+  <div data-role="content" id="content">
     <metal:block define-slot="content">
     <div metal:define-macro="content">
       <metal:slot define-slot="body">
