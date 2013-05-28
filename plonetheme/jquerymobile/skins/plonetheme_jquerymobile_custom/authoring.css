@@ -1,0 +1,18 @@
+/* Reviewed version of authoring.css
+ * original version: Plone = 4.3
+       plonetheme.sunburst = 1.4.1
+ */
+
+
+#content li.formTab a.required span:after,
+#content-core li.formTab a.required span:after,
+div.field span.required:after {
+    font-family: FontAwesome !important;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    font-size: 80%;
+    content: "\f005";
+    padding: 0 0 0 1em;
+    color: red;
+}
