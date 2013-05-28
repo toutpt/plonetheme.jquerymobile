@@ -1,0 +1,11 @@
+/* Reviewed version of base.css
+ * original version: Plone = 4.3
+       plonetheme.sunburst = 1.4.1
+ */
+
+/* Content layout styles */
+#content div.documentByLine {
+    font-size: 85%;
+    display: block;
+    color: #666;
+}
