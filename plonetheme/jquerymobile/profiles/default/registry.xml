@@ -4,6 +4,7 @@
   <record name="Products.ResourceRegistries.interfaces.settings.IResourceRegistriesSettings.resourceBundlesForThemes">
     <value purge="False">
       <element key="plonetheme.jquerymobile">
+        <element>default</element>
         <element>polyfill</element>
         <element>jquery</element>
         <element>jquerymobile</element>
