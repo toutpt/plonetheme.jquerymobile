@@ -1,0 +1,64 @@
+/* @group Forms */
+
+.field label{
+    display: inline-block!important;
+}
+
+.fieldRequired:before {
+    font-family: FontAwesome !important;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    font-size: 80%;
+    content: "\f005";
+    padding: 0 0 0 1em;
+    color: red;
+}
+
+.formHelp {
+    color: #555;
+    margin: 0 0 0.2em 0;
+    display: block;
+    font-weight: normal;
+}
+.ui-checkbox .formHelp{
+    color: #ddd;
+}
+
+/* @group forms errors */
+div.field.error {
+    background-color: #fdc;
+    border:  1px solid red;
+    padding: 0.5em;
+    margin:  1em 0;
+}
+.error .fieldRequired {
+    color: #d00;
+}
+div.error.warning {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+div.error.warning input {
+    border: 2px solid red;
+}
+/* @end error */
+
+
+textarea#form\.description {
+    height: 6em;
+    width: 99%;
+}
+
+
+/* @group Login form */
+body.template-logged_out #content,
+body.template-login_form #content{
+    text-align: center;
+}
+/* @end */
+
+/* @end */
