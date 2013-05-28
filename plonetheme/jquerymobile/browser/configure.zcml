@@ -46,4 +46,14 @@
         allowed_interface="plone.app.form.widgets.interfaces.IDateComponents"
         layer="plonetheme.jquerymobile.layer.Layer"
         />
+
+    <browser:page
+        name="search"
+        for="*"
+        class="plone.app.search.browser.Search"
+        permission="zope2.View"
+        template="templates/search.pt"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
+
 </configure>
