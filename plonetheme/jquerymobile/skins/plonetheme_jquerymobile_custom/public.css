@@ -1,0 +1,35 @@
+/* Reviewed version of public.css
+ * original version: Plone = 4.3
+       plonetheme.sunburst = 1.4.1
+ */
+
+/* @group document description */
+#content .documentDescription,
+#content #description {
+    color: #666;
+    margin-left: 0;
+    font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif;
+}
+/* @end document description */
+
+/* @group pre */
+
+#content pre {
+    background-color: #222;
+    color: White;
+    font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    padding: 1em;
+    overflow-x: auto;
+    font-size: 90%;
+    margin-bottom: 1em;
+    line-height: 1.25em;
+}
+#content pre.python {
+    background-color: White;
+}
+
+#content code {
+    font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+}
+
+/* @end pre */
