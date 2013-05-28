@@ -21,12 +21,14 @@ Done
 * viewlet: shortcuts (folder_contents/edit actions)
 * widget: file in edit mode are blocked (ui-disabled class)
 * widget: datetime for archetypes relooking
+* styles: add default bundle from Plone
+* styles: remove selected portions of Plone default resources
 
 Todo
 ====
 
-* widget: querystring
 * form: manage portlets
 * page: controlpanel users
 * form: content_status_history
 * form: select_default_page
+* widget: querystring
