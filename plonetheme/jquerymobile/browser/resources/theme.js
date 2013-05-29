@@ -9,12 +9,11 @@ $(document).on("pagebeforecreate", function(){
 	}
 	if ($(formselector).length != 0){
 		var attr = $(formselector).attr("data-role");
-		if (typeof attr == 'undefined' || attr == false){
-			$(formselector).attr("data-role", "controlgroup").attr("data-type", "horizontal");
-			var actionsNames = ["form.actions.save", "form.button.Publish"];
-			for (var i = 0; i < actionsNames.length; i++) {
-				$(formselector + " input[type='submit'][name='"+actionsNames[i] + "']").attr("data-theme", "b");
-			}
+		$(formselector).attr("data-role", "controlgroup").attr("data-type", "horizontal");
+		var actionsNames = ["form.actions.save", "form.button.Publish", "form.buttons.comment"];
+		for (var i = 0; i < actionsNames.length; i++) {
+			console.log(formselector + " input[type='submit'][name='"+actionsNames[i] + "']");
+			$(formselector + " input[type='submit'][name='"+actionsNames[i] + "']").attr("data-theme", "b");
 		}
 	}
 });
