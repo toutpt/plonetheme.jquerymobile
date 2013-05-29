@@ -65,3 +65,43 @@ class SearchRightAction(BaseHeaderAction):
 
 class GlobalSections(GlobalSectionsViewlet):
     index = ViewPageTemplateFile("templates/sections.pt")
+
+    def update(self):
+        """JQueryMobile select don't fire change event for the already
+        selected tab. To fix this behavior and let the user being able to
+        qui @@search, controlpanel and other screens, we just include a new
+        entry in the portal_tabs with the current view name
+
+        It is a workaround...
+        """
+
+        ViewletBase.update(self)  # to add portal_state
+        super(GlobalSections, self).update()
+        if self.selected_tabs['portal'] == 'index_html':
+            #verify we are on the home page.
+            #else insert a new entry in portal_tabs
+            portal = self.portal_state.portal()
+            portal_url = portal.absolute_url()
+            default_page = portal.getDefaultPage()
+            if default_page:
+                default_page = getattr(portal, default_page)
+                layout = default_page.getLayout()
+                portal_url = default_page.absolute_url() + '/' + layout
+            url = self.request['URL']
+            if url != portal_url:
+                self.selected_tabs['portal'] = 'current'
+                info = {
+                    'category': 'portal_tabs',
+                    'available': True,
+                    'description': u'',
+                    'title': unicode(url.split('/')[-1]),
+                    'url': url,
+                    'name': unicode(url.split('/')[-1]),
+                    'visible': True,
+                    'allowed': True,
+                    'link_target': None,
+                    'id': 'current',
+                    'icon': ''
+                }
+                self.portal_tabs.insert(0, info)
+                self.selected_portal_tab = 'current'
