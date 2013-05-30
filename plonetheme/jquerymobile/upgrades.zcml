@@ -4,7 +4,7 @@
 
     <upgradeStep
         source="*"
-        destination="1008"
+        destination="1100"
         title="Upgrade"
         description=""
         profile="plonetheme.jquerymobile:default"

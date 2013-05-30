@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>1008</version>
+  <version>1100</version>
   <dependencies>
     <dependency>profile-collective.fontawesome:default</dependency>
+    <dependency>profile-collective.js.jquerymobile:default</dependency>
     <dependency>profile-collective.z3cform.html5widgets:default</dependency>
   </dependencies>
 </metadata>
