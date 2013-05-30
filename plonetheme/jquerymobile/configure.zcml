@@ -23,9 +23,9 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="JQueryMobile Theme"
+      title="plonetheme.jquerymobile"
       directory="profiles/default"
-      description='Extension profile for the "JQueryMobile Theme" Plone theme.'
+      description='Default profile for the "JQueryMobile Theme" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <include file="upgrades.zcml" />
