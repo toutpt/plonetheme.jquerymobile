@@ -1,9 +1,16 @@
-<select name="globalsections" id="globalsections" onchange="window.location = this.options[this.selectedIndex].value;"
-    data-native-menu="false" data-iconpos="notext" data-filter="true" data-force-dialog="true"
-    tal:define="portal_tabs view/portal_tabs;
+<tal:block tal:define="portal_tabs view/portal_tabs;
         selected_tab python:view.selected_portal_tab">
-<tal:option tal:repeat="tab portal_tabs">
-    <option tal:condition="python:selected_tab==tab['id']" selected="selected" tal:attributes="value tab/url" tal:content="tab/name">section name</option>
-    <option tal:condition="python:selected_tab!=tab['id']" tal:attributes="value tab/url" tal:content="tab/name">section name</option>
-</tal:option>
-</select>
+<a href="#popup-globalsection"
+   data-rel="popup" data-role="button" data-inline="true"
+   data-transition="fade" data-icon="arrow-down" data-iconpos="notext">Menu</a>
+
+<div data-role="popup" id="popup-globalsection" i18n:domain="plone">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+        <li tal:repeat="tab portal_tabs">
+          <a data-rel="popup"
+             tal:attributes="href tab/url; data-theme python:selected_tab==tab['id'] and 'b' or 'a'"
+             tal:content="tab/name"
+             i18n:translate="">Add</a></li>
+    </ul>
+</div>
+</tal:block>

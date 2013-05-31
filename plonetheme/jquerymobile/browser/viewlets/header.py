@@ -1,14 +1,11 @@
 from zope import component
-from plone.app.layout.viewlets.common import (
-    ViewletBase,
-    GlobalSectionsViewlet,
-)
+from plone.app.layout.viewlets import common
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plonetheme.jquerymobile import i18n
 _ = i18n._
 
 
-class BaseHeaderAction(ViewletBase):
+class BaseHeaderAction(common.ViewletBase):
     """This is the base header action class
     it generate all nice jquerymobile options you want
 
@@ -63,45 +60,6 @@ class SearchRightAction(BaseHeaderAction):
         return plone_portal_state.navigation_root_url() + '/@@search'
 
 
-class GlobalSections(GlobalSectionsViewlet):
-    index = ViewPageTemplateFile("templates/sections.pt")
-
-    def update(self):
-        """JQueryMobile select don't fire change event for the already
-        selected tab. To fix this behavior and let the user being able to
-        qui @@search, controlpanel and other screens, we just include a new
-        entry in the portal_tabs with the current view name
-
-        It is a workaround...
-        """
-
-        ViewletBase.update(self)  # to add portal_state
-        super(GlobalSections, self).update()
-        if self.selected_tabs['portal'] == 'index_html':
-            #verify we are on the home page.
-            #else insert a new entry in portal_tabs
-            portal = self.portal_state.portal()
-            portal_url = portal.absolute_url()
-            default_page = portal.getDefaultPage()
-            if default_page:
-                default_page = getattr(portal, default_page)
-                layout = default_page.getLayout()
-                portal_url = default_page.absolute_url() + '/' + layout
-            url = self.request['URL']
-            if url != portal_url:
-                self.selected_tabs['portal'] = 'current'
-                info = {
-                    'category': 'portal_tabs',
-                    'available': True,
-                    'description': u'',
-                    'title': unicode(url.split('/')[-1]),
-                    'url': url,
-                    'name': unicode(url.split('/')[-1]),
-                    'visible': True,
-                    'allowed': True,
-                    'link_target': None,
-                    'id': 'current',
-                    'icon': ''
-                }
-                self.portal_tabs.insert(0, info)
-                self.selected_portal_tab = 'current'
+class PersonalBarViewlet(common.PersonalBarViewlet):
+    def getIcon(self, action):
+        return "user"
