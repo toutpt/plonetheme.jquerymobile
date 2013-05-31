@@ -1,5 +1,5 @@
-from zope import interface
+from z3c.form.interfaces import IFormLayer
 
 
-class Layer(interface.Interface):
+class Layer(IFormLayer):
     """Browser layer"""

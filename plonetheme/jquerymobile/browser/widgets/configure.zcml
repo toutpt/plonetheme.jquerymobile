@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="plonetheme.jquerymobile">
+
+    <z3c:widgetTemplate
+        mode="input"
+        widget="plone.formwidget.namedfile.interfaces.INamedFileWidget"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        template="file_input.pt"
+        />
+
+    <z3c:widgetTemplate
+        mode="input"
+        widget="plone.formwidget.namedfile.interfaces.INamedImageWidget"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        template="image_input.pt"
+        />
+
+
+</configure>

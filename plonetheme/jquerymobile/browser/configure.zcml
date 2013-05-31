@@ -6,6 +6,7 @@
     <include package="Products.CMFCore" file="permissions.zcml" />
     <include package="plone.app.workflow"/>
     <include package=".viewlets" />
+    <include package=".widgets" />
 
     <browser:resourceDirectory
       directory="resources"
