@@ -57,6 +57,15 @@
       template="templates/global_statusmessage.pt"
       permission="zope2.View"
       />
+  <!-- The breadcrumbs -->
+  <browser:viewlet
+      name="plone.path_bar"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class="plone.app.layout.viewlets.common.PathBarViewlet"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      template="templates/path_bar.pt"
+      permission="zope2.View"
+      />
 
   <!-- plonetheme.jquerymobile.usertoolbar -->
   <browser:viewlet
