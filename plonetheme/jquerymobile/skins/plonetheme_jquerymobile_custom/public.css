@@ -4,11 +4,11 @@
  */
 
 /* @group document description */
-#content .documentDescription,
-#content #description {
+.documentDescription,
+#description {
     color: #666;
-    margin-left: 0;
-    font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif;
+    margin-left: 0; margin-bottom: 20px;
+    font: bold 0.85em "Helvetica Neue", Arial, FreeSans, sans-serif;
 }
 /* @end document description */
 
