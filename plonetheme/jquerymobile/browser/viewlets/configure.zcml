@@ -115,7 +115,7 @@
       />
   <browser:viewlet
       name="plone.belowcontenttitle.documentbyline"
-      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
       class="plone.app.layout.viewlets.content.DocumentBylineViewlet"
       template="templates/document_byline.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
