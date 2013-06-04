@@ -65,6 +65,15 @@
         template="templates/search_updated.pt"
         layer="plonetheme.jquerymobile.layer.Layer"
         />
+    <browser:page
+        for="*"
+        name="manage-portlets-macros"
+        class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+        template="templates/edit-manager-macros.pt"
+        permission="plone.app.portlets.ManageOwnPortlets"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
+
 
     <browser:resource
         name="search.js"
