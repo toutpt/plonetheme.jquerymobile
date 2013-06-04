@@ -2,7 +2,7 @@
         selected_tab python:view.selected_portal_tab">
 <a href="#popup-globalsection"
    data-rel="popup" data-role="button" data-inline="true"
-   data-transition="fade" data-icon="arrow-down" data-iconpos="notext">Menu</a>
+   data-transition="fade" data-icon="folder-open" data-iconpos="notext">Menu</a>
 
 <div data-role="popup" id="popup-globalsection" i18n:domain="plone">
     <ul data-role="listview" data-inset="true" data-icon="false">
