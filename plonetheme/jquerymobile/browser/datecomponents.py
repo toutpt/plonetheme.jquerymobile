@@ -1,6 +1,6 @@
 from plone.app.form.widgets import datecomponents as base
 from Products.CMFPlone import PloneMessageFactory
-_ = PloneMessageFactory
+_p = PloneMessageFactory
 
 
 class DateComponents(base.DateComponents):
@@ -23,15 +23,15 @@ class DateComponents(base.DateComponents):
             minute_step=minute_step
         )
         if result["years"][0]["id"] == "--":
-            result["years"][0]["id"] = _(u"Year")
+            result["years"][0]["id"] = _p(u"Year")
         if result["months"][0]["title"] == "--":
-            result["months"][0]["title"] = _(u"Month")
+            result["months"][0]["title"] = _p(u"Month")
         if result["days"][0]["id"] == "--":
-            result["days"][0]["id"] = _(u"Day")
+            result["days"][0]["id"] = _p(u"Day")
         if result["hours"][0]["id"] == "--":
-            result["hours"][0]["id"] = _(u"Hour")
+            result["hours"][0]["id"] = _p(u"Hour")
         if result["minutes"][0]["id"] == "--":
-            result["minutes"][0]["id"] = _(u"Minute")
+            result["minutes"][0]["id"] = _p(u"Minute")
         if result["ampm"] and result["ampm"][0]["id"] == "--":
-            result["ampm"][0]["id"] = _(u"AM/PM")
+            result["ampm"][0]["id"] = _p(u"AM/PM")
         return result
