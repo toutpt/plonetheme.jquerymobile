@@ -42,7 +42,7 @@
   <!-- plone.personalbar -->
   <browser:viewlet
       name="plone.personalbar"
-      class=".header.PersonalBarViewlet"
+      class=".personal_bar.PersonalBarViewlet"
       template="templates/personal_bar.pt"
       manager=".manager.IHeaderRight"
       layer="plonetheme.jquerymobile.layer.Layer"

@@ -58,8 +58,3 @@ class SearchRightAction(BaseHeaderAction):
             name="plone_portal_state"
         )
         return plone_portal_state.navigation_root_url() + '/@@search'
-
-
-class PersonalBarViewlet(common.PersonalBarViewlet):
-    def getIcon(self, action):
-        return "user"
