@@ -25,6 +25,9 @@ Badges
     :alt: Coverage
     :target: https://coveralls.io/r/toutpt/plonetheme.jquerymobile
 
+.. image:: https://saucelabs.com/buildstatus/plonetheme-jquerymob
+   :alt: SauceLabs
+   :target: https://saucelabs.com/u/plonetheme-jquerymob
 
 Done
 ====
