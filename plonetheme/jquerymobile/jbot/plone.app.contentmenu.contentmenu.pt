@@ -9,6 +9,7 @@
         <h3 tal:omit-tag="not:menuItem/action"
             data-ajax="false"
             tal:content="menuItem/title"
+            tal:attributes="id menuItem/extra/id"
             i18n:translate="">Title</h3>
         <div data-role="controlgroup" tal:define="submenu menuItem/submenu">
             <tal:block repeat="subMenuItem submenu">

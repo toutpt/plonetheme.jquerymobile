@@ -8,7 +8,8 @@
     <ul data-role="listview" data-inset="true" data-icon="false">
         <li tal:repeat="tab portal_tabs">
           <a data-rel="popup"
-             tal:attributes="href tab/url; data-theme python:selected_tab==tab['id'] and 'b' or 'a'"
+             tal:attributes="href tab/url; data-theme python:selected_tab==tab['id'] and 'b' or 'a';
+                 id string:portaltab-${tab/id};"
              tal:content="tab/name"
              i18n:translate="">Add</a></li>
     </ul>

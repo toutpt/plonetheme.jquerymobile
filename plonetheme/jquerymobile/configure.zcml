@@ -12,7 +12,6 @@
   <includeDependencies package="."/>
 
   <include package="z3c.jbot" file="meta.zcml" />
-
   <browser:jbot directory="jbot" layer=".layer.Layer" />
 
   <cmf:registerDirectory name="plonetheme_jquerymobile_custom"/>
