@@ -17,6 +17,8 @@ env:
   - ROBOT_REMOTE_URL=http://$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub
   - ROBOT_DESIRED_CAPABILITIES=tunnel-identifier:$TRAVIS_JOB_ID
 before_script:
+  - bin/instance start
+  - bash -c "while [ ! -f CONNECTED ]; do sleep 2; done"
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 install:
@@ -29,7 +31,6 @@ install:
   - unzip Sauce-Connect-latest.zip
   - java -jar Sauce-Connect.jar $SAUCE_USERNAME $SAUCE_ACCESS_KEY -i $TRAVIS_JOB_ID -f CONNECTED &
   - JAVA_PID=$!
-  - bash -c "while [ ! -f CONNECTED ]; do sleep 2; done"
 #after_success:
 #  - pip install coveralls
 #  - coveralls
