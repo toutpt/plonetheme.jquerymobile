@@ -4,7 +4,7 @@ env:
   - TARGET=test
   - TARGET=python-validation.sh
 #  - TARGET=coverage.sh
-  global:
+global:
   - secure: |-
       RhbnYEMoKQfm5viGRtFpvljXJr8sjRUet89LBPW3EHaonXTKuxWz0RQ/Py9r
       kHIcJgw4WodAUYGc1ITzbiQL9ssy1whgL0VjfWOYjUcyZvATwme8ZQUZ78Wy
