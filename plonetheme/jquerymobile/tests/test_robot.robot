@@ -4,8 +4,10 @@ Resource  plone/app/robotframework/selenium.robot
 Resource  plone/app/robotframework/keywords.robot
 Resource  plonetheme/jquerymobile/keywords.robot
 
-Test Setup  Open test browser
-Test Teardown  Close all browsers
+Resource  plone/app/robotframework/saucelabs.robot
+
+Test Setup  Open SauceLabs test browser
+Test Teardown  Run keywords  Report test status  Close all browsers
 
 *** Test Cases ***
 
@@ -22,7 +24,7 @@ I can open the search form
 I can browse the global sections
     Given I'm logged in as site owner
       When I add a folder 'section 1'
-       And I add a folder 'section 2'
+       And I add a folder 'sub-section 2'
        And I click on the 'folder-open' icon
       Then I see the sections
 
@@ -67,4 +69,4 @@ I see the sections
     Element should be visible  css=#popup-globalsection
     Element should be visible  css=#portaltab-index_html
     Element should be visible  css=#portaltab-section-1
-    Element should not be visible  css=#portaltab-section-2
+    Element should not be visible  css=#portaltab-sub-section-2
