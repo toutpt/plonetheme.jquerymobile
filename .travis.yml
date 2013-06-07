@@ -1,9 +1,10 @@
 language: python
 python: 2.7
 env:
+  matrix:
+    - TARGET=test
+    - TARGET=python-validation.sh
   global:
-  - TARGET=test
-  - TARGET=python-validation.sh
   - secure: |-
       RhbnYEMoKQfm5viGRtFpvljXJr8sjRUet89LBPW3EHaonXTKuxWz0RQ/Py9r
       kHIcJgw4WodAUYGc1ITzbiQL9ssy1whgL0VjfWOYjUcyZvATwme8ZQUZ78Wy
