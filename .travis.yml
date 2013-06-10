@@ -6,7 +6,7 @@ env:
   - TARGET=test ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES="tunnel-identifier:$TRAVIS_JOB_ID"
   - TARGET=python-validation.sh ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES="tunnel-identifier:$TRAVIS_JOB_ID"
   - TARGET=coverage.sh ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES="tunnel-identifier:$TRAVIS_JOB_ID"
-#  - TARGET=test ROBOT_DESIRED_CAPABILITIES="platform:OS X 10.8,browserName:iPad,version:6,tunnel-identifier:$TRAVIS_JOB_ID"
+  - TARGET=test ROBOT_DESIRED_CAPABILITIES="platform:OS X 10.8,browserName:iPad,version:6,tunnel-identifier:$TRAVIS_JOB_ID"
 #  - TARGET=test ROBOT_DESIRED_CAPABILITIES="platform:OS X 10.8,browserName:iPhone,version:6,tunnel-identifier:$TRAVIS_JOB_ID"
 #  - TARGET=test ROBOT_DESIRED_CAPABILITIES="platform:Linux,version:4,browserName:android,tunnel-identifier:$TRAVIS_JOB_ID"
   global:
