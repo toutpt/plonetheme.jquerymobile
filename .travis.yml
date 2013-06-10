@@ -17,9 +17,7 @@ env:
   - ROBOT_BUILD_NUMBER=travis-$TRAVIS_BUILD_NUMBER
   - ROBOT_REMOTE_URL=http://$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub
 before_script:
-  - bin/instance start
   - bash -c "while [ ! -f CONNECTED ]; do sleep 2; done"
-  - tail var/log/instance.log
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 install:

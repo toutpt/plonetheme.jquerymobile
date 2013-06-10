@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.0dev'
-extra_requires = {'test': ['plone.app.testing', 'plone.app.robotframework']}
+extra_requires = {'test': ['plone.app.testing[robot]>=4.2.2']}
 
 setup(name='plonetheme.jquerymobile',
       version=version,
