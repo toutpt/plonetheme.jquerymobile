@@ -6,13 +6,13 @@ env:
     - TARGET=python-validation.sh
   global:
   - secure: |-
-      RhbnYEMoKQfm5viGRtFpvljXJr8sjRUet89LBPW3EHaonXTKuxWz0RQ/Py9r
-      kHIcJgw4WodAUYGc1ITzbiQL9ssy1whgL0VjfWOYjUcyZvATwme8ZQUZ78Wy
-      y7PDyPlbv/TcWvn1yUvoUZE/ATkmtJw6x+DkD+I4+QNlUtBYz6g=
+        KJVaD49mpVIRWP3UyX6wog9IMXfgCvevPpACrrj0QORKqzZTgCutiMcObjcC
+        YAzhLqLUZz3xbc3yi1QDVXn53nzcEpJJOwTE7c5jj1Pj182zfQCvLdKYrhMt
+        NBbcFd0qVi3avmuwZa8UpruVtvV8k5D/BP9XL+YU2aC4sZTcYtU=
   - secure: |-
-      LJ6/9dm+2srw3QgFaQq+po9CYODF3zl6P6uBgK8GIcrS1R49k9JTuLgEUnHb
-      yAfM0AW9Bwmp5xLJ6VMkw6nEcGPto6BIhBNnDMjquNq0b8gZ7oWniw1uhSVe
-      Sfq7NGPqw9I/tWfwoe0PNl/SgTfmkIMWAOcZRvKND5XzXn7OigM=
+        GpCWOUZHAtNzwfy2ZnMoGZdp2WPHdtsAwdA3/Tg7YPq2jznVrP0XO7Yqw41B
+        N7wupruCcwoczcNaFdkTdXEAmOC0QURuydj1OeCXHlR7Ex03DhnjQzgrbiX0
+        tuNZzemadyN2mgyl9iMobOLKaY64QYV9RE0PitRySjEHvRRlsw8=
   - ROBOT_BUILD_NUMBER=travis-$TRAVIS_BUILD_NUMBER
   - ROBOT_REMOTE_URL=http://$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub
   - ROBOT_DESIRED_CAPABILITIES=tunnel-identifier:$TRAVIS_JOB_ID
