@@ -2,8 +2,15 @@ language: python
 python: 2.7
 env:
   matrix:
-    - TARGET=test
-    - TARGET=python-validation.sh
+    include:
+      - TARGET=test
+        ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES=tunnel-identifier:$TRAVIS_JOB_ID
+      - TARGET=test
+        ROBOT_BROWSER=ie ROBOT_DESIRED_CAPABILITIES=tunnel-identifier:$TRAVIS_JOB_ID,version:6
+      - TARGET=test
+        ROBOT_DESIRED_CAPABILITIES="platform:OS X 10.8,browserName:iPad,version:6,tunnel-identifier:$TRAVIS_JOB_ID"
+      - TARGET=python-validation.sh
+        ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES=tunnel-identifier:$TRAVIS_JOB_ID
   global:
   - secure: |-
         KJVaD49mpVIRWP3UyX6wog9IMXfgCvevPpACrrj0QORKqzZTgCutiMcObjcC
@@ -15,7 +22,6 @@ env:
         tuNZzemadyN2mgyl9iMobOLKaY64QYV9RE0PitRySjEHvRRlsw8=
   - ROBOT_BUILD_NUMBER=travis-$TRAVIS_BUILD_NUMBER
   - ROBOT_REMOTE_URL=http://$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub
-  - ROBOT_DESIRED_CAPABILITIES=tunnel-identifier:$TRAVIS_JOB_ID
 before_script:
   - bin/instance start
   - bash -c "while [ ! -f CONNECTED ]; do sleep 2; done"
