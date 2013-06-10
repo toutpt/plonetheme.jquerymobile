@@ -26,15 +26,9 @@ install:
   - python bootstrap.py -c travis.cfg
   - bin/buildout -N -t 3 -c travis.cfg -q install download install
   - bin/buildout -N -t 3 -c travis.cfg -q
-  - curl -O http://saucelabs.com/downloads/Sauce-Connect-latest.zip
-  - unzip Sauce-Connect-latest.zip
-  - java -jar Sauce-Connect.jar $SAUCE_USERNAME $SAUCE_ACCESS_KEY -i $TRAVIS_JOB_ID -f CONNECTED &
-  - JAVA_PID=$!
 before_script:
-  - bash -c "while [ ! -f CONNECTED ]; do sleep 2; done"
+  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
 script: bin/$TARGET
-after_script:
-  - kill $JAVA_PID
 after_success:
   - pip install coveralls
   - coveralls
