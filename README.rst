@@ -10,18 +10,18 @@ Badges
 ======
 
 
-.... image:: https://pypip.in/v/plonetheme.jquerymobile/badge.png
+.. image:: https://pypip.in/v/plonetheme.jquerymobile/badge.png
     :target: https://crate.io/packages/plonetheme.jquerymobile/
     :alt: Latest PyPI version
 
-.... image:: https://pypip.in/d/plonetheme.jquerymobile/badge.png
+.. image:: https://pypip.in/d/plonetheme.jquerymobile/badge.png
     :target: https://crate.io/packages/plonetheme.jquerymobile/
     :alt: Number of PyPI downloads
 
 .. image:: https://secure.travis-ci.org/toutpt/plonetheme.jquerymobile.png
     :target: http://travis-ci.org/#!/toutpt/plonetheme.jquerymobile
 
-.... image:: https://coveralls.io/repos/toutpt/plonetheme.jquerymobile/badge.png?branch=master
+.. image:: https://coveralls.io/repos/toutpt/plonetheme.jquerymobile/badge.png?branch=master
     :alt: Coverage
     :target: https://coveralls.io/r/toutpt/plonetheme.jquerymobile
 
