@@ -20,6 +20,8 @@ env:
         tuNZzemadyN2mgyl9iMobOLKaY64QYV9RE0PitRySjEHvRRlsw8=
   - ROBOT_BUILD_NUMBER=travis-$TRAVIS_BUILD_NUMBER
   - ROBOT_REMOTE_URL=http://$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub
+  - ZSERVER_PORT=8080
+  - ROBOT_ZOPE_PORT=8080
 install:
   - mkdir -p buildout-cache/eggs
   - mkdir -p buildout-cache/downloads
