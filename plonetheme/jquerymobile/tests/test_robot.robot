@@ -14,20 +14,20 @@ Test Teardown  Run keywords  Report test status  Close all browsers
 
 I can open the login form
     Given I'm on the home page
-      When I click on the 'user' icon
-      Then I see the login form
+     When I click on the 'user' icon
+     Then I see the login form
 
 I can open the search form
     Given I'm on the home page
-      When I click on the 'search' icon
-      Then I see the search form
+     When I click on the 'search' icon
+     Then I see the search form
 
 I can browse the global sections
     Given I'm logged in as site owner
-      When I add a folder 'section 1'
-       And I add a folder 'sub-section 2'
-       And I click on the 'folder-open' icon
-      Then I see the sections
+     When I add a folder 'section 1'
+      And I add a folder 'sub-section 2'
+      And I click on the 'folder-open' icon
+     Then I see the sections
 
 Site Owner can access control panel
     Given I'm logged in as site owner
