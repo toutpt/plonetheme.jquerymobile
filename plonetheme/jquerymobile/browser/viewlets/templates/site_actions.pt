@@ -1,4 +1,4 @@
-<div id="portal-siteactions"  data-role="controlgroup" data-type="horizontal" data-mini="true"
+<div id="portal-siteactions"  data-role="controlgroup" data-type="vertical" data-mini="true"
     tal:define="accesskeys python: {'sitemap' : '3', 'accessibility' : '0', 'contact' : '9'};"
     tal:condition="view/site_actions"
     i18n:domain="plone">

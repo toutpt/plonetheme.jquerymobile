@@ -1,4 +1,5 @@
-<div id="portal-colophon" data-role="collapsible" i18n:domain="plonetheme.jquerymobile">
+<div id="portal-colophon" data-role="collapsible" data-mini="true"
+     i18n:domain="plonetheme.jquerymobile">
  <h2>Powerd by</h2>
  <ul data-role="listview">
   <li><a href="http://python.org"
