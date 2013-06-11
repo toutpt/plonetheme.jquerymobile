@@ -1,0 +1,25 @@
+<div id="portal-colophon" data-role="collapsible" i18n:domain="plonetheme.jquerymobile">
+ <h2>Powerd by</h2>
+ <ul data-role="listview">
+  <li><a href="http://python.org"
+         title="The Python programming language."
+         i18n:attributes="title title_built_with_python;"
+         i18n:translate="label_powered_by_python">Python</a></li>
+  <li><a href="http://zope.org"
+         title="The Zope Framework & Application server."
+         i18n:attributes="title title_built_with_zope;"
+         i18n:translate="label_powered_by_zope">Zope</a></li>
+  <li><a href="http://plone.org"
+         title="The Plone CMS/WCM."
+         i18n:attributes="title title_built_with_plone;"
+         i18n:translate="label_powered_by_plone">Plone</a></li>
+  <li><a href="http://jquery.com"
+         title="The jQuery JavaScript library."
+         i18n:attributes="title title_built_with_jquery;"
+         i18n:translate="label_powered_by_jquery">jQuery</a></li>
+  <li><a href="http://jquerymobile.com"
+         title="The jQuery Mobile web framework."
+         i18n:attributes="title title_built_with_jquerymobile;"
+         i18n:translate="label_powered_by_jquerymobile">jQuery mobile</a></li>
+ </ul>
+</div>
