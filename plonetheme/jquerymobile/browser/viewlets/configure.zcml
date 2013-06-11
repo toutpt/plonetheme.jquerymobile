@@ -121,4 +121,23 @@
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
+  <!-- Colophon -->
+  <browser:viewlet
+      name="plone.colophon"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      template="templates/colophon.pt"
+      permission="zope.Public"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  <!-- The site actions -->
+  <browser:viewlet
+      name="plone.site_actions"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      template="templates/site_actions.pt"
+      class="plone.app.layout.viewlets.common.SiteActionsViewlet"
+      permission="zope2.View"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+
 </configure>

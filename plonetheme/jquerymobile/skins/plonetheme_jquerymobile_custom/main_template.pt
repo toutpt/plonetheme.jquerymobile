@@ -108,6 +108,11 @@
     </metal:block>
   </div>
 
+  <div data-role="footer">
+    <div tal:replace="structure provider:plone.portalfooter" />
+  </div>
+
+
 <div data-role="panel" id="panel-left">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
   <div tal:replace="structure provider:plone.leftcolumn"></div>

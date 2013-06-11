@@ -11,3 +11,9 @@
 .portalMessage .ui-icon{
 	float: left;
 }
+#portal-siteactions{
+	text-align: center;
+}
+#portal-footer{
+	padding-left: 1em;
+}
