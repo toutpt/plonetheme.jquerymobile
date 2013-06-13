@@ -14,13 +14,15 @@
               tal:condition="not:selected"
               tal:content="action/title"
               tal:attributes="href action/url;
-                              target action/link_target|nothing;"
+                              target action/link_target|nothing;
+                              id string:contentview-${action/id};"
               i18n:translate="">View name</a>
            <a href="" data-role="button" data-icon="check"
               tal:condition="selected"
               tal:content="action/title"
               tal:attributes="href action/url;
-                              target action/link_target|nothing;"
+                              target action/link_target|nothing;
+                              id string:contentview-${action/id};"
               i18n:translate="">View name</a>
          </tal:button>
        </tal:views>

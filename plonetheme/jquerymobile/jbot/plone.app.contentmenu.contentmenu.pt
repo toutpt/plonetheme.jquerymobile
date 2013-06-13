@@ -5,7 +5,7 @@
     tal:omit-tag=""
     i18n:domain="plone">
 
-    <div data-role="collapsible" tal:repeat="menuItem menu">
+    <div id="contentActionMenus" data-role="collapsible" tal:repeat="menuItem menu">
         <h3 tal:omit-tag="not:menuItem/action"
             data-ajax="false"
             tal:content="menuItem/title"
