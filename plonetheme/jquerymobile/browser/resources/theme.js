@@ -16,6 +16,9 @@ $(document).on("pagebeforecreate", function(){
 			$(formselector + " input[type='submit'][name='"+actionsNames[i] + "']").attr("data-theme", "b");
 		}
 	}
+	/*add data-theme="b" on all .portlet [data-role="collapsible"] elements*/
+	$('.portlet[data-role="collapsible"]').attr("data-theme", "b");
+	$('fieldset[data-role="collapsible"]').attr("data-theme", "b");
 });
 
 $( document ).on( "pageinit", ".page", function() {
