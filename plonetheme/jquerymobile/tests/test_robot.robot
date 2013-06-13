@@ -64,7 +64,7 @@ I see the search form
     Element should be visible  css=input[name="SearchableText"][data-type="search"]
 
 I add a folder '${title}'
-    JQMobile:Add  folder ${title}
+    JQMobile:Add folder  ${title}
 
 I see the sections
     Element should be visible  css=#popup-globalsection

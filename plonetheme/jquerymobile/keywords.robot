@@ -16,7 +16,7 @@ JQMobile:Open left panel
     Wait Until Page Contains Element  css=#panel-left
 
 JQMobile:Add form
-    [arguments]  ${type} ${title}
+    [arguments]  ${type}
     JQMobile:Open left panel
     Click Link  css=#plone-contentmenu-factories a
     Wait Until Page Contains Element  css=a#${type}
