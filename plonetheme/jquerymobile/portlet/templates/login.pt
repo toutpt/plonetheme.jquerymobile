@@ -1,7 +1,7 @@
 <tal:block condition="view/show"
            i18n:domain="plone">
 
-<div data-role="collapsible" class="portlet portletLogin"
+<div data-role="collapsible" data-collapsed="false" class="portlet portletLogin"
     tal:condition="view/available">
 
     <h4 i18n:translate="box_sign_in">Log in</h4>

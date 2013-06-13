@@ -1,16 +1,11 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      tal:omit-tag="">
-<div data-role="collapsible" class="portlet portletEvents"
+<div data-role="collapsible" data-collapsed="false" class="portlet portletEvents"
+    tal:define="all_events_link view/all_events_link|nothing"
     i18n:domain="plone">
 
     <h4 class="portletHeader"
-        tal:define="all_events_link view/all_events_link"
         i18n:translate="box_events">
          Upcoming Events
     </h4>
-
     <ul data-role="listview">
     <tal:events tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                             DateTime python:modules['DateTime'].DateTime"
@@ -76,4 +71,3 @@
     </li>
     </ul>
 </div>
-</html>
