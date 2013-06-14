@@ -72,7 +72,8 @@
             </tbody>
 
         </table>
-        <div data-role="controlgroup" data-type="horizontal">
+        <div data-role="controlgroup" data-type="horizontal" tal:replace="nothing">
+        <!-- ajax of the calendar must be rewrite to works with jqmobile -->
          <a href="#" rel="nofollow" data-role="button"
            title="Previous month"
            class="calendarPrev"
