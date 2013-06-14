@@ -34,6 +34,13 @@ class PanelLeftAction(BaseHeaderAction):
     iconpos = "notext"
     label = _(u"Open left panel")
 
+    def is_available(self):
+        plone_view = self.context.restrictedTraverse('@@plone')
+        portal_state = self.context.restrictedTraverse('@@plone_portal_state')
+        isanon = portal_state.anonymous()
+        hasportlets = plone_view.have_portlets('plone.leftcolumn')
+        return not isanon or hasportlets
+
 
 class PanelRightAction(BaseHeaderAction):
     href = "string:#panel-right"
