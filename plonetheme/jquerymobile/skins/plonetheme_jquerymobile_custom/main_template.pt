@@ -58,7 +58,7 @@
     tal:attributes="class body_class;
                     dir python:isRTL and 'rtl' or 'ltr'">
 
-<div data-role="page" class="page">
+<div data-role="page" class="page ui-responsive-panel">
 
   <div data-role="header">
     <div tal:replace="structure provider:plone.portaltop" />
@@ -113,11 +113,11 @@
   </div>
 
 
-<div data-role="panel" id="panel-left" tal:condition="python: not portal_state.anonymous() or view.have_portlets('plone.leftcolumn')">
+<div data-role="panel" id="panel-left" tal:condition="python: not portal_state.anonymous() or plone_view.have_portlets('plone.leftcolumn')">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
   <div tal:replace="structure provider:plone.leftcolumn"></div>
 </div>
-<div data-role="panel" data-position="right" id="panel-right" tal:condition="python:view.have_portlets('plone.rightcolumn')">
+<div data-role="panel" data-position="right" id="panel-right" tal:condition="python:plone_view.have_portlets('plone.rightcolumn')">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelright" />
   <div tal:replace="structure provider:plone.rightcolumn"></div>
 </div>
