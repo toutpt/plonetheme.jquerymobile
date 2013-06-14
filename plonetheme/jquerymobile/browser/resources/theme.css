@@ -73,57 +73,85 @@
 	}
 }
 @media screen and (min-width: 768px){
-    /* panel will take 50% */
-    .ui-panel {width: 50%}
-    .ui-panel-position-left {left: -50%;}
-    .ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay,
-    .ui-panel-animate.ui-panel-position-left.ui-panel-display-push {
-        -webkit-transform: translate3d(-50%,0,0);
-        -moz-transform: translate3d(-50%,0,0);
-        transform: translate3d(-50%,0,0);
-    }
-    .ui-panel-position-right {
-        right: -50%;
-    }
-    /* animated: panel right (for overlay and push) */
-    .ui-panel-animate.ui-panel-position-right.ui-panel-display-overlay,
-    .ui-panel-animate.ui-panel-position-right.ui-panel-display-push {
-        -webkit-transform: translate3d(50%,0,0);
-        -moz-transform: translate3d(50%,0,0);
-        transform: translate3d(50%,0,0);
-    }
-    /* positioning: content wrap, fixed toolbars and dismiss */
-    /* panel left open */
-    .ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open,
-    .ui-panel-content-wrap-position-left.ui-panel-content-wrap-open,
-    .ui-panel-dismiss-position-left.ui-panel-dismiss-open {
-        left: 50%;
-        right: -50%;
-    }
-    .ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal,
-    .ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
-    .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal,
-    .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
-        left: 0;
-        right: 0;
-        -webkit-transform: translate3d(50%,0,0);
-        -moz-transform: translate3d(50%,0,0);
-        transform: translate3d(50%,0,0);
-    }
-    .ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open,
-    .ui-panel-content-wrap-position-right.ui-panel-content-wrap-open,
-    .ui-panel-dismiss-position-right.ui-panel-dismiss-open {
-        left: -50%;
-        right: 50%;
-    }
-    /* animated: panel right open (for reveal and push) */
-    .ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal, 
-    .ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
-    .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal, 
-    .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
-        -webkit-transform: translate3d(-50%,0,0);
-        -moz-transform: translate3d(-50%,0,0);
-        transform: translate3d(-50%,0,0);
-    }
+    /* make panel responsive
+       http://view.jquerymobile.com/1.3.1/dist/demos/widgets/panels/
+       http://view.jquerymobile.com/1.3.1/dist/demos/widgets/panels/panel-fixed.html
+    */
+
+    /* wrap on wide viewports once open */
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push.ui-panel-content-fixed-toolbar-position-left,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal.ui-panel-content-fixed-toolbar-position-left,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-wrap-display-push.ui-panel-content-wrap-position-left,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-wrap-display-reveal.ui-panel-content-wrap-position-left {
+	    margin-right: 50%;
+	}
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push.ui-panel-content-fixed-toolbar-position-right,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal.ui-panel-content-fixed-toolbar-position-right,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-wrap-display-push.ui-panel-content-wrap-position-right,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-wrap-display-reveal.ui-panel-content-wrap-position-right {
+	    margin-left: 50%;
+	}
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push,
+	.ui-responsive-panel.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal {
+	    width: auto;
+	}
+	
+	/* disable "dismiss" on wide viewports */
+	.ui-responsive-panel .ui-panel-dismiss-display-push {
+	    display: none;
+	}
+
+    /* resize the panel left and right to 50%*/
+	.ui-panel {width: 50%}
+	.ui-panel-position-left {
+	   left: -50%;
+	}
+	.ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay,
+	.ui-panel-animate.ui-panel-position-left.ui-panel-display-push {
+	    -webkit-transform: translate3d(-50%,0,0);
+	    -moz-transform: translate3d(-50%,0,0);
+	    transform: translate3d(-50%,0,0);
+	}
+	.ui-panel-position-right {
+	    right: -50%;
+	}
+	/* animated: panel right (for overlay and push) */
+	.ui-panel-animate.ui-panel-position-right.ui-panel-display-overlay,
+	.ui-panel-animate.ui-panel-position-right.ui-panel-display-push {
+	    -webkit-transform: translate3d(50%,0,0);
+	    -moz-transform: translate3d(50%,0,0);
+	    transform: translate3d(50%,0,0);
+	}
+	/* positioning: content wrap, fixed toolbars and dismiss */
+	/* panel left open */
+	.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open,
+	.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open,
+	.ui-panel-dismiss-position-left.ui-panel-dismiss-open {
+	    left: 25%!important;
+	    right: -25%!important;
+	}
+	.ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal,
+	.ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
+	.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal,
+	.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+	    -webkit-transform: translate3d(50%,0,0);
+	    -moz-transform: translate3d(50%,0,0);
+	    transform: translate3d(50%,0,0);
+	}
+	.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open,
+	.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open,
+	.ui-panel-dismiss-position-right.ui-panel-dismiss-open {
+	    left: -25%!important;
+	    right: 25%!important;
+	}
+	/* animated: panel right open (for reveal and push) */
+	.ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal, 
+	.ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
+	.ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal, 
+	.ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+	    -webkit-transform: translate3d(-50%,0,0);
+	    -moz-transform: translate3d(-50%,0,0);
+	    transform: translate3d(-50%,0,0);
+	}
 
 }
