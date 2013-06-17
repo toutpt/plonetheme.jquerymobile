@@ -1,9 +1,10 @@
 ---
 language: python
 python: 2.7
+#http://selenium.googlecode.com/git/docs/api/py/webdriver/selenium.webdriver.common.desired_capabilities.html
 env:
   matrix:
-  - TARGET=test ROBOT_SELENIUM_VERSION=" " ROBOT_DESIRED_CAPABILITIES="platform:linux,browserName:android,version:4.0,tunnel-identifier:$TRAVIS_JOB_NUMBER"
+  - TARGET=test ROBOT_SELENIUM_VERSION=" " ROBOT_DESIRED_CAPABILITIES="platform:ANDROID,browserName:android,version:,tunnel-identifier:$TRAVIS_JOB_NUMBER"
   - TARGET=test ROBOT_SELENIUM_VERSION=" " ROBOT_DESIRED_CAPABILITIES="platform:OS X 10.8,browserName:iPhone,version:6,tunnel-identifier:$TRAVIS_JOB_NUMBER"
 #  - TARGET=python-validation.sh ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES="tunnel-identifier:$TRAVIS_JOB_NUMBER"
 #  - TARGET=coverage.sh ROBOT_BROWSER=firefox ROBOT_DESIRED_CAPABILITIES="tunnel-identifier:$TRAVIS_JOB_NUMBER"
