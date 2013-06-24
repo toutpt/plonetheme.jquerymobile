@@ -5,12 +5,18 @@
     i18n_domain="plonetheme.jquerymobile">
 
   <include package="plone.app.portlets"/>
-
   <plone:portletRenderer
       portlet="plone.app.portlets.portlets.calendar.ICalendarPortlet"
       template="templates/calendar.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.search.ISearchPortlet"
+      template="templates/search.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+<!--
+WARNING: those portlets are now transformed into JQM using Javascripts.
   <plone:portletRenderer
       portlet="plone.app.portlets.portlets.events.IEventsPortlet"
       template="templates/events.pt"
@@ -36,7 +42,7 @@
       template="templates/news.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       />
-  <plone:portletRenderer
+   <plone:portletRenderer
       portlet="plone.app.portlets.portlets.recent.IRecentPortlet"
       template="templates/recent.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
@@ -51,10 +57,5 @@
       template="templates/rss.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       />
-  <plone:portletRenderer
-      portlet="plone.app.portlets.portlets.search.ISearchPortlet"
-      template="templates/search.pt"
-      layer="plonetheme.jquerymobile.layer.Layer"
-      />
-
+ -->
 </configure>

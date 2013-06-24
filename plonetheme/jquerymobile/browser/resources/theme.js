@@ -1,24 +1,154 @@
 $.mobile.ajaxEnabled = false;
-$(document).on("pagebeforecreate", function(){
-	/*
-	 * This function make formcontrols actions look nice in jqm
-	 * */
+
+/**
+@function convertStatusMessageToJQM
+
+  <dl class="portalMessage warning">
+       <dt>Avertissement</dt>
+       <dd>MESSASGE HTML <p>paragraph</p></dd>
+   </dl>
+transformed to ->
+    <div class="ui-bar portalMessage portalMessage-info ui-bar-b">
+        <h3>Bienvenue ! Vous êtes maintenant connecté(e).</h3>
+        <div class="ui-icon ui-icon-info"></div>
+    </div>
+*/
+function convertStatusMessageToJQM(){
+	$('dl.portalMessage:visible').each(function() {
+		var message = $(this).find("dd").html();
+		var parent = $(this).parent();
+		var newMessage = document.createElement("div");
+		var newMessageTitle = document.createElement("h3");
+		$(newMessageTitle).html(message);
+		newMessage.appendChild(newMessageTitle);
+		$(newMessage).addClass("ui-bar").addClass('ui-bar-b').addClass($(this).attr('class'));
+		parent.append($(newMessage));
+		$(this).replaceWith(newMessage);
+	});
+}
+/**
+@function convertControlPanelToJQM
+<div style="float:left; margin-right: 1em; width: 29%">
+    <ul class="configlets">
+        <li>
+            <a href="http://localhost:8080/Plone/@@calendar-controlpanel">
+                <img src="http://localhost:8080/Plone/event_icon.png" alt="Calendrier">
+                Calendrier
+            </a>
+        </li>
+        ...
+    </ul>
+</div>
+converted To ->
+<div>
+    <ul class="configlets ui-listview" data-role="listview">
+        <li>
+            <a href="http://localhost:8080/adria-rcse/@@rcse-security-controlpanel">
+                RCSE configuration
+            </a>
+        </li>
+        ...
+    </ul>
+</div>
+*/
+function convertControlPanelToJQM(){
+	$('ul.configlets').attr('data-role', 'listview').parent().removeAttr('style');
+	$('ul.configlets img').remove();
+}
+/**
+@function convertFormsToJQM
+This function converts forms to JQM. It wraps actions into a controlgroup
+and add data-theme="b" to the first action (which should be the most important).
+*/
+function convertFormsToJQM(){
 	var formselector = ".formControls span";
 	if ($(formselector ).length == 0){
 		formselector = ".formControls";
 	}
 	if ($(formselector).length != 0){
-		var attr = $(formselector).attr("data-role");
-		$(formselector).attr("data-role", "controlgroup").attr("data-type", "horizontal");
-		var actionsNames = ["form.actions.save", "form.button.Publish", "form.buttons.comment"];
-		for (var i = 0; i < actionsNames.length; i++) {
-			console.log(formselector + " input[type='submit'][name='"+actionsNames[i] + "']");
-			$(formselector + " input[type='submit'][name='"+actionsNames[i] + "']").attr("data-theme", "b");
-		}
+		$(formselector).each(function(){
+			var attr = $(this).attr("data-role");
+			$(this).attr("data-role", "controlgroup").attr("data-type", "horizontal");
+			$(this).find("input[type='submit']").first().attr("data-theme", "b");
+		})
 	}
-	/*add data-theme="b" on all .portlet [data-role="collapsible"] elements*/
+}
+/**
+@function convertTableToJQM
+This add data-role="table" attribute to table with listing class.
+*/
+function convertTableToJQM(){
+	$('table.listing[data-role!="table"]').attr("data-role", "table").attr("data-mode", "reflow").addClass("ui-responsive table-stroke");
+}
+/**
+@function convertPortletToJQM
+update portlet structure to make it collapsible
+theme: use theme-b
+<dl class="portlet portletRecent">
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a href="http://localhost:8080/adria-rcse/recently_modified" class="ui-link">Modifications récentes</a>
+        <span class="portletTopRight"></span>
+    </dt>
+    <dd class="portletItem odd">
+        <a href="http://localhost:8080/adria-rcse/groupe-de-travail/test/view" class="state-private tile contenttype-collective-rcse-document ui-link" title="">
+             test
+             <span class="portletItemDetails">20/06/2013</span>
+         </a>
+    </dd>
+    <dd class="portletItem even">
+        <a href="http://localhost:8080/adria-rcse/groupe-de-travail/view" class="state-private tile contenttype-collective-rcse-group" title="">
+             groupe de travail
+             <span class="portletItemDetails">20/06/2013</span>
+         </a>
+    </dd>
+    <dd class="portletFooter">
+        <a href="http://localhost:8080/adria-rcse/recently_modified" class="tile">Toutes les modifications récentes…</a>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
+-> should be changed to
+<div data-role="collapsible" data-collapsed="false" class="portlet portletNews" data-theme="b">
+    <h4>Actualités</a></h4>
+    <ul data-role="listview">
+    <li>
+        <a href="http://localhost:8080/adria-rcse/test-actu-1" class="tile" title="">
+            test actu 1
+            <span class="portletItemDetails">13/06/2013</span>
+         </a>
+    </li>
+    </ul>
+</div></div>
+*/
+function convertPortletToJQM(){
+	$("dl.portlet").each(function(){
+		var newPortlet = document.createElement("div");
+		var newTitle = document.createElement("h4");
+		var newList = document.createElement("ul");
+
+		var title = $(this).find("dt").remove(".portletTopLeft").remove(".portletTopRight").text();
+		$(newPortlet).attr("data-role", "collapsible").attr("data-collapsed", "false").addClass($(this).attr("class"));
+		$(newTitle).html(title);
+		$(newPortlet).append(newTitle);
+		$(newList).attr("data-role", "listview");
+		$(this).find("dd a").each(function(){
+			var newItem = document.createElement("li");
+			newItem.appendChild(this);
+			newList.appendChild(newItem);
+		});
+		newPortlet.appendChild(newList);
+		$(this).replaceWith(newPortlet);
+	});
 	$('.portlet[data-role="collapsible"]').attr("data-theme", "b");
 	$('fieldset[data-role="collapsible"]').attr("data-theme", "b");
+}
+$(document).on("pagebeforecreate", function(){
+	convertPortletToJQM();
+	convertTableToJQM();
+	convertControlPanelToJQM();
+	convertFormsToJQM();
+	convertStatusMessageToJQM();
 });
 
 $( document ).on( "pageinit", ".page", function() {
