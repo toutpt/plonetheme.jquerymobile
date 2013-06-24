@@ -118,7 +118,6 @@
               </td>
               <td tal:condition="view/show_select_column" class="notDraggable">
                 <input type="checkbox"
-                       class="noborder"
                        name="paths:list" id="#"
                        value="#"
                        tal:attributes="value   item/path|id;
@@ -126,13 +125,12 @@
                                        checked item/checked;
                                        alt     python:view.msg_select_item(item);
                                        title   python:view.msg_select_item(item)" />
-                <input type="hidden" name="selected_obj_paths:list" value="#"
-                       tal:attributes="value item/path|id" />
                 <label tal:content="title_or_id"
-                       tal:attributes="for string:cb_${id}" 
-                       class="hiddenStructure">
+                       tal:attributes="for string:cb_${id}">
                   Item Title
                 </label>
+                <input type="hidden" name="selected_obj_paths:list" value="#"
+                       tal:attributes="value item/path|id" />
               </td>
               <td>
                   <img tal:replace="structure item/icon|nothing" />
@@ -198,7 +196,7 @@
       </metal:block>
     </table>
     <div tal:replace="structure view/batching" tal:condition="not:view/show_all"/>
-    <div data-role="controlgroup" data-type="horizontal">
+    <div data-role="controlgroup" data-type="vertical">
     <tal:buttons tal:repeat="button view/buttons">
       <input class="context"
              type="submit"
