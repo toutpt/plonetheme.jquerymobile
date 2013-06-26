@@ -15,6 +15,7 @@ transformed to ->
 */
 function convertStatusMessageToJQM(){
 	$('dl.portalMessage:visible').each(function() {
+		console.log("status message transformed ");
 		var message = $(this).find("dd").html();
 		var parent = $(this).parent();
 		var newMessage = document.createElement("div");
@@ -76,9 +77,18 @@ function convertFormsToJQM(){
 /**
 @function convertTableToJQM
 This add data-role="table" attribute to table with listing class.
+
+Make sure table uses thead/tbody tags
 */
 function convertTableToJQM(){
-	$('table.listing[data-role!="table"]').attr("data-role", "table").attr("data-mode", "reflow").addClass("ui-responsive table-stroke");
+	$('table.listing[data-role!="table"]').each(function(){
+		//TODO: exclude vertical (eventdetails)
+		//TODO: add a tbody wrapper
+		if( $(this).find("thead").length == 0 ){
+			$(this).find("tr:first").wrap("<thead>");
+		}
+		$(this).attr("data-role", "table").attr("data-mode", "reflow").addClass("ui-responsive table-stroke");
+	});
 }
 /**
 @function convertPortletToJQM
@@ -132,7 +142,7 @@ function convertPortletToJQM(){
 		$(newTitle).html(title);
 		$(newPortlet).append(newTitle);
 		$(newList).attr("data-role", "listview");
-		$(this).find("dd a").each(function(){
+		$(this).find("dd").each(function(){
 			var newItem = document.createElement("li");
 			newItem.appendChild(this);
 			newList.appendChild(newItem);
