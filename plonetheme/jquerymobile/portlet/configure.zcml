@@ -15,6 +15,11 @@
       template="templates/search.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       />
+  <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+      template="templates/navigation.pt"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
 <!--
 WARNING: those portlets are now transformed into JQM using Javascripts.
   <plone:portletRenderer
@@ -30,11 +35,6 @@ WARNING: those portlets are now transformed into JQM using Javascripts.
   <plone:portletRenderer
       portlet="plone.app.portlets.portlets.login.ILoginPortlet"
       template="templates/login.pt"
-      layer="plonetheme.jquerymobile.layer.Layer"
-      />
-  <plone:portletRenderer
-      portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
-      template="templates/navigation.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       />
   <plone:portletRenderer
