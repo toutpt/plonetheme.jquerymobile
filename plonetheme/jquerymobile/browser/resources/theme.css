@@ -17,6 +17,10 @@
 #portal-footer{
 	padding-left: 1em;
 }
+iframe {
+  max-width: 100%;
+}
+
 /*panel styles*/
 @media screen and (max-width: 767px){
 	/* panel will take 100% */
