@@ -12,27 +12,25 @@ Test Teardown  Run keywords  Report test status  Close all browsers
 
 *** Test Cases ***
 
-I can open the login form
-    Given I'm on the home page
-     When I click on the 'user' icon
-     Then I see the login form
-
-I can open the search form
+I can use the theme
     Given I'm on the home page
      When I click on the 'search' icon
      Then I see the search form
 
-I can browse the global sections
+    Given I'm on the home page
+     When I click on the 'user' icon
+     Then I see the login form
+
     Given I'm logged in as site owner
      When I add a folder 'section 1'
       And I add a folder 'sub-section 2'
       And I click on the 'folder-open' icon
      Then I see the sections
 
-Site Owner can access control panel
-    Given I'm logged in as site owner
+    Given I'm on the home page
      When I open the personal menu
-     Then I see the Site Setup -link
+      And I click the Site Setup link
+     Then I see control panels
 
 *** Keywords ***
 
@@ -47,14 +45,16 @@ I'm logged in as site owner
 I open the personal menu
     Click link  css=#user-name
 
-I see the Site Setup -link
-    Element should be visible  css=#personaltools-plone_setup
+I click the Site Setup link
+    Click link  css=#personaltools-plone_setup a
 
 I'm on the home page
     Go to  ${PLONE_URL}
 
 I click on the '${ICON}' icon
     JQMobile:Click '${ICON}' icon
+
+
 
 I see the login form
     Element should be visible  css=#__ac_name
@@ -71,3 +71,7 @@ I see the sections
     Element should be visible  css=#portaltab-index_html
     Element should be visible  css=#portaltab-section-1
     Element should not be visible  css=#portaltab-sub-section-2
+
+I see control panels
+    Element should be visible  css=.configlets.ui-listview
+    

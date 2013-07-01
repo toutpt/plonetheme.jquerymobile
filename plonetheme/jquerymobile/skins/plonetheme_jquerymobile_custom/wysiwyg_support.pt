@@ -1,0 +1,7 @@
+<html i18n:domain="plone">
+
+<div metal:define-macro="wysiwygEditorBox">
+   <metal:block metal:use-macro="here/contenteditable_wysiwyg_support/macros/wysiwygEditorBox"></metal:block>
+</div>
+
+</html>

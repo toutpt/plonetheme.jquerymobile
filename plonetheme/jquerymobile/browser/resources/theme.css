@@ -21,6 +21,11 @@ iframe {
   max-width: 100%;
 }
 
+div[contenteditable=true]{
+    min-height: 300px;
+    border: 1px dashed #ddd;
+}
+
 /*panel styles*/
 @media screen and (max-width: 767px){
 	/* panel will take 100% */
