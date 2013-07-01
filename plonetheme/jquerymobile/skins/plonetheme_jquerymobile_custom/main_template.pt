@@ -113,13 +113,17 @@
   </div>
 
 
-<div data-role="panel" data-position="left" data-position-fixed="true" id="panel-left" tal:condition="python: not portal_state.anonymous() or plone_view.have_portlets('plone.leftcolumn')">
+<div data-role="panel" data-position="left" data-position-fixed="true" id="panel-left" tal:condition="python: not portal_state.anonymous() or plone_view.have_portlets('plone.leftcolumn')" data-swipe-close="false" data-dismissible="false">
+  <a href="#panel-right" data-rel="close" data-role="button" data-theme="c" data-icon="remove" i18n:translate="close_panel">Close panel</a>
   <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
   <div tal:replace="structure provider:plone.leftcolumn"></div>
+  <a href="#panel-left" data-rel="close" data-role="button" data-theme="c" data-icon="remove" i18n:translate="close_panel">Close panel</a>
 </div>
-<div data-role="panel" data-position="right" data-position-fixed="true" id="panel-right" tal:condition="python:plone_view.have_portlets('plone.rightcolumn')">
+<div data-role="panel" data-position="right" data-position-fixed="true" id="panel-right" tal:condition="python:plone_view.have_portlets('plone.rightcolumn')" data-swipe-close="false" data-dismissible="false">
+  <a href="#panel-right" data-rel="close" data-role="button" data-theme="c" data-icon="remove" i18n:translate="close_panel">Close panel</a>
   <div tal:content="structure provider:plonetheme.jquerymobile.panelright" />
   <div tal:replace="structure provider:plone.rightcolumn"></div>
+  <a href="#panel-right" data-rel="close" data-role="button" data-theme="c" data-icon="remove" i18n:translate="close_panel">Close panel</a>
 </div>
 
 
