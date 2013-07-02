@@ -43,7 +43,7 @@ I'm logged in as site owner
     Go to  ${PLONE_URL}
 
 I open the personal menu
-    Click link  css=#user-name
+    Click link  css=#personalbar
 
 I click the Site Setup link
     Click link  css=#personaltools-plone_setup a
@@ -67,7 +67,7 @@ I add a folder '${title}'
     JQMobile:Add folder  ${title}
 
 I see the sections
-    Element should be visible  css=#popup-globalsection
+    Element should be visible  css=#popup-globalsections
     Element should be visible  css=#portaltab-index_html
     Element should be visible  css=#portaltab-section-1
     Element should not be visible  css=#portaltab-sub-section-2
