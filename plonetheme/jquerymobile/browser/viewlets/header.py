@@ -33,6 +33,7 @@ class PanelLeftAction(BaseHeaderAction):
     icon = "bars"
     iconpos = "notext"
     label = _(u"Open left panel")
+    weight = 0
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
@@ -47,6 +48,7 @@ class PanelRightAction(BaseHeaderAction):
     icon = "grid"
     iconpos = "notext"
     label = _(u"Open right panel")
+    weight = 10000
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')

@@ -5,45 +5,45 @@
 
   <browser:viewletManager
       name="plonetheme.jquerymobile.panelleft"
-      provides=".manager.IPanelLeft"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IPanelLeft"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
       name="plonetheme.jquerymobile.panelright"
-      provides=".manager.IPanelRight"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IPanelRight"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
       name="plonetheme.jquerymobile.header.left"
-      provides=".manager.IHeaderLeft"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderLeft"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
       name="plonetheme.jquerymobile.header.right"
-      provides=".manager.IHeaderRight"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderRight"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
       name="plonetheme.jquerymobile.header.title"
-      provides=".manager.IHeaderTitle"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderTitle"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
       name="plonetheme.jquerymobile.footer"
-      provides=".manager.IFooter"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IFooter"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
       name="plonetheme.jquerymobile.belowcontent"
-      provides=".manager.IBelowContent"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IBelowContent"
       permission="zope2.View"
-      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
 
 </configure>

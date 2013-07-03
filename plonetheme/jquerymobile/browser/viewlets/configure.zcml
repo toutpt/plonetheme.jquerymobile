@@ -9,15 +9,15 @@
   <!-- header.leftaction.panel -->
   <browser:viewlet
       name="plonetheme.jquerymobile.header.sitetitle"
-      class=".header.SiteTitle"
-      manager=".manager.IHeaderTitle"
+      class="plonetheme.jquerymobile.browser.viewlets.header.SiteTitle"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderTitle"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
   <browser:viewlet
       name="plonetheme.jquerymobile.header.leftaction.panel"
-      class=".header.PanelLeftAction"
-      manager=".manager.IHeaderLeft"
+      class="plonetheme.jquerymobile.browser.viewlets.header.PanelLeftAction"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderLeft"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
@@ -25,7 +25,7 @@
   <browser:viewlet
       name="plonetheme.jquerymobile.header.leftaction.sections"
       class="plone.app.layout.viewlets.common.GlobalSectionsViewlet"
-      manager=".manager.IHeaderLeft"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderLeft"
       template="templates/sections.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
@@ -33,25 +33,25 @@
   <!-- plonetheme.jquerymobile.header.rightaction.search -->
   <browser:viewlet
       name="plonetheme.jquerymobile.header.rightaction.search"
-      class=".header.SearchRightAction"
-      manager=".manager.IHeaderRight"
+      class="plonetheme.jquerymobile.browser.viewlets.header.SearchRightAction"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderRight"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
   <!-- plone.personalbar -->
   <browser:viewlet
       name="plone.personalbar"
-      class=".personal_bar.PersonalBarViewlet"
+      class="plonetheme.jquerymobile.browser.viewlets.personal_bar.PersonalBarViewlet"
       template="templates/personal_bar.pt"
-      manager=".manager.IHeaderRight"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderRight"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
   <!-- header.rightaction.panel -->
   <browser:viewlet
       name="plonetheme.jquerymobile.header.rightaction.panel"
-      class=".header.PanelRightAction"
-      manager=".manager.IHeaderRight"
+      class="plonetheme.jquerymobile.browser.viewlets.header.PanelRightAction"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderRight"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
@@ -61,6 +61,7 @@
       name="plonetheme.jquerymobile.global_statusmessage"
       manager="plone.app.layout.viewlets.interfaces.IAboveContent"
       layer="plonetheme.jquerymobile.layer.Layer"
+      class="plonetheme.jquerymobile.browser.viewlets.global_statusmessage.GlobalStatusmessageViewlet"
       template="templates/global_statusmessage.pt"
       permission="zope2.View"
       />
@@ -77,8 +78,8 @@
   <!-- plonetheme.jquerymobile.usertoolbar -->
   <browser:viewlet
       name="plonetheme.jquerymobile.usertoolbar"
-      class=".panel.UserToolBar"
-      manager=".manager.IPanelLeft"
+      class="plonetheme.jquerymobile.browser.viewlets.panel.UserToolBar"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IPanelLeft"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
@@ -94,22 +95,22 @@
     <browser:viewlet
         name="plonetheme.jquerymobile.footer"
         template="templates/footer.pt"
-        manager=".manager.IBelowContent"
+        manager="plonetheme.jquerymobile.browser.viewlets.manager.IBelowContent"
         layer="plonetheme.jquerymobile.layer.Layer"
         permission="zope2.View"
         />
     <browser:viewlet
         name="plonetheme.jquerymobile.panel.left"
         template="templates/panel_left.pt"
-        manager=".manager.IBelowContent"
+        manager="plonetheme.jquerymobile.browser.viewlets.manager.IBelowContent"
         layer="plonetheme.jquerymobile.layer.Layer"
         permission="zope2.View"
         />
     <browser:viewlet
         name="plonetheme.jquerymobile.panel.right"
         template="templates/panel_right.pt"
-        class=".panel.RightPanel"
-        manager=".manager.IBelowContent"
+        class="plonetheme.jquerymobile.browser.viewlets.panel.RightPanel"
+        manager="plonetheme.jquerymobile.browser.viewlets.manager.IBelowContent"
         layer="plonetheme.jquerymobile.layer.Layer"
         permission="zope2.View"
         />
