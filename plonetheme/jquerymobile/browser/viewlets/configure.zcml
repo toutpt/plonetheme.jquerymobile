@@ -75,7 +75,22 @@
       permission="zope2.View"
       />
 
-  <!-- plonetheme.jquerymobile.usertoolbar -->
+  <browser:viewlet
+      name="plonetheme.jquerymobile.panelleft.header"
+      class="plonetheme.jquerymobile.browser.viewlets.panel.PanelLeftHeader"
+      template="templates/panel_left_header.pt"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IPanelLeft"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
+  <browser:viewlet
+      name="plonetheme.jquerymobile.panelright.header"
+      class="plonetheme.jquerymobile.browser.viewlets.panel.PanelRightHeader"
+      template="templates/panel_right_header.pt"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IPanelRight"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
   <browser:viewlet
       name="plonetheme.jquerymobile.usertoolbar"
       class="plonetheme.jquerymobile.browser.viewlets.panel.UserToolBar"
