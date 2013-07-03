@@ -65,3 +65,14 @@ class SearchRightAction(BaseHeaderAction):
             name="plone_portal_state"
         )
         return plone_portal_state.navigation_root_url() + '/@@search'
+
+
+class SiteTitle(common.ViewletBase):
+    def update(self):
+        portal_state = component.getMultiAdapter(
+            (self.context, self.request), name=u'plone_portal_state'
+        )
+        self.title = portal_state.portal().Title()
+
+    def render(self):
+        return self.title

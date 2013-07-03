@@ -9,6 +9,10 @@ class IHeaderRight(IViewletManager):
     """a viewlet manager that sits on the header right"""
 
 
+class IHeaderTitle(IViewletManager):
+    """a viewlet manager that sits on the header center"""
+
+
 class IBelowContent(IViewletManager):
     """A viewlet manager that sits at the end of the page"""
 

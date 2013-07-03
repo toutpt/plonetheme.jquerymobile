@@ -4,4 +4,4 @@
 <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
   <div tal:replace="structure provider:plonetheme.jquerymobile.header.right" />
 </div>
-<h1>&nbsp;</h1>
+<h1><tal:h1 tal:replace="structure provider:plonetheme.jquerymobile.header.title" /></h1>

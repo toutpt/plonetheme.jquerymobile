@@ -28,6 +28,12 @@
       class="plone.app.viewletmanager.manager.OrderedViewletManager"
       />
   <browser:viewletManager
+      name="plonetheme.jquerymobile.header.title"
+      provides=".manager.IHeaderTitle"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      />
+  <browser:viewletManager
       name="plonetheme.jquerymobile.footer"
       provides=".manager.IFooter"
       permission="zope2.View"
