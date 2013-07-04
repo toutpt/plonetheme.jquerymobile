@@ -31,7 +31,7 @@ class BaseHeaderAction(common.ViewletBase):
 
 
 class PanelLeftAction(BaseHeaderAction):
-    href = "string:#panel-left"
+    href = "#panel-left"
     icon = "bars"
     iconpos = "notext"
     label = _(u"Open left panel")
@@ -46,7 +46,7 @@ class PanelLeftAction(BaseHeaderAction):
 
 
 class PanelRightAction(BaseHeaderAction):
-    href = "string:#panel-right"
+    href = "#panel-right"
     icon = "grid"
     iconpos = "notext"
     label = _(u"Open right panel")
