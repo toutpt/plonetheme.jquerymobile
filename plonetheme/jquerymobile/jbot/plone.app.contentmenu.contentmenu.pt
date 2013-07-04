@@ -7,7 +7,6 @@
 
     <div id="contentActionMenus" data-role="collapsible" tal:repeat="menuItem menu">
         <h3 tal:omit-tag="not:menuItem/action"
-            data-ajax="false"
             tal:content="menuItem/title"
             tal:attributes="id menuItem/extra/id"
             i18n:translate="">Title</h3>

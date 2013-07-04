@@ -66,12 +66,16 @@
 
   <div data-role="content" id="content">
     <metal:block define-slot="content">
-    <div metal:define-macro="content">
+    <div metal:define-macro="content"
+         tal:define="show_border context/@@plone/showEditableBorder; show_border python:show_border and not ajax_load;">
       <metal:slot define-slot="body">
         <metal:bodytext define-slot="main">
 
           <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
-
+          <div id="edit-bar" data-role="collapsible" data-theme="b" tal:condition="show_border">
+              <h4 i18n:translate="">Edit bar</h4>
+              <div tal:content="structure provider:plone.contentviews"/>
+          </div>
           <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
           <metal:title define-slot="content-title">
               <metal:comment tal:content="nothing">
@@ -82,6 +86,7 @@
                   Generic KSS Title. Is rendered with class="documentFirstHeading".
               </h1>
           </metal:title>
+
           <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
 
           <metal:description define-slot="content-description">
@@ -113,7 +118,7 @@
   </div>
 
 <tal:panels i18n:domain="plonetheme.jquerymobile">
-<div data-role="panel" data-position="left" data-position-fixed="true" id="panel-left" tal:condition="python: not portal_state.anonymous() or plone_view.have_portlets('plone.leftcolumn')" data-swipe-close="false" data-dismissible="false">
+<div data-role="panel" data-position="left" data-position-fixed="true" id="panel-left" tal:condition="python:plone_view.have_portlets('plone.leftcolumn')" data-swipe-close="false" data-dismissible="false">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
   <div tal:replace="structure provider:plone.leftcolumn"></div>
 </div>

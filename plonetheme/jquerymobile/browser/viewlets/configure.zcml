@@ -21,6 +21,13 @@
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
+  <browser:viewlet
+      name="plonetheme.jquerymobile.header.leftaction.home"
+      class="plonetheme.jquerymobile.browser.viewlets.header.HomeHeaderAction"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderLeft"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      permission="zope2.View"
+      />
   <!-- header.leftaction.sections -->
   <browser:viewlet
       name="plonetheme.jquerymobile.header.leftaction.sections"
@@ -56,6 +63,14 @@
       permission="zope2.View"
       />
 
+    <!-- Content views (tabs) -->
+    <browser:viewlet
+        name="plone.contentviews"
+        manager="plone.app.layout.viewlets.interfaces.IContentViews"
+        class=".contentviews.JQueryMobileContentViewsViewlet"
+        permission="zope2.View"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
   <!-- global_statusmessage -->
   <browser:viewlet
       name="plonetheme.jquerymobile.global_statusmessage"
@@ -91,14 +106,14 @@
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
-  <browser:viewlet
+<!--   <browser:viewlet
       name="plonetheme.jquerymobile.usertoolbar"
       class="plonetheme.jquerymobile.browser.viewlets.panel.UserToolBar"
       manager="plonetheme.jquerymobile.browser.viewlets.manager.IPanelLeft"
       layer="plonetheme.jquerymobile.layer.Layer"
       permission="zope2.View"
       />
-
+ -->
     <browser:viewlet
         name="plone.header"
         manager="plone.app.layout.viewlets.interfaces.IPortalTop"

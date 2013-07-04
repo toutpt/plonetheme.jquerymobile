@@ -3,8 +3,8 @@
      tal:define="breadcrumbs view/breadcrumbs;
                  is_rtl view/is_rtl"
      tal:condition="python:len(breadcrumbs)==2"
-     data-role="collapsible" data-mini="true" data-theme="b" data-content-theme="a">
-    <h4 i18n:translate="you_are_here">You are here: </h4>
+     data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="c">
+    <h4><span tal:omit-tag="" i18n:translate="you_are_here">You are here: </span>&nbsp;<span tal:replace="python:breadcrumbs[-1]['Title']"></span></h4>
     <ul data-role="listview">
         <li>
           <a tal:attributes="href view/site_url" i18n:translate="">Home</a>

@@ -25,7 +25,9 @@ div[contenteditable=true]{
     min-height: 300px;
     border: 1px dashed #ddd;
 }
-
+#content-views{
+    margin-bottom: 15px;
+}
 /*panel styles*/
 .ui-panel-inner {
     padding: 0

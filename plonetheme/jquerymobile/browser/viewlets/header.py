@@ -39,10 +39,8 @@ class PanelLeftAction(BaseHeaderAction):
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
-        portal_state = self.context.restrictedTraverse('@@plone_portal_state')
-        isanon = portal_state.anonymous()
         hasportlets = plone_view.have_portlets('plone.leftcolumn')
-        return not isanon or hasportlets
+        return hasportlets
 
 
 class PanelRightAction(BaseHeaderAction):
@@ -55,6 +53,20 @@ class PanelRightAction(BaseHeaderAction):
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
         return plone_view.have_portlets('plone.rightcolumn', self.context)
+
+
+class HomeHeaderAction(BaseHeaderAction):
+    icon = "home"
+    iconpos = "notext"
+    weight = 10
+
+    @property
+    def href(self):
+        plone_portal_state = component.getMultiAdapter(
+            (self.context, self.request),
+            name="plone_portal_state"
+        )
+        return plone_portal_state.navigation_root_url()
 
 
 class SearchRightAction(BaseHeaderAction):
