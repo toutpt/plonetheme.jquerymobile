@@ -24,7 +24,7 @@
   <!-- header.leftaction.sections -->
   <browser:viewlet
       name="plonetheme.jquerymobile.header.leftaction.sections"
-      class="plone.app.layout.viewlets.common.GlobalSectionsViewlet"
+      class="plonetheme.jquerymobile.browser.viewlets.header.GlobalSections"
       manager="plonetheme.jquerymobile.browser.viewlets.manager.IHeaderLeft"
       template="templates/sections.pt"
       layer="plonetheme.jquerymobile.layer.Layer"

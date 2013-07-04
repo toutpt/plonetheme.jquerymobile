@@ -12,5 +12,17 @@
       </element>
     </value>
   </record>
+  <record name="plonetheme.jquerymobile.viewlet.globalsections.filter">
+     <field type="plone.registry.field.Bool">
+         <title>data-filter</title>
+     </field>
+     <value>False</value>
+  </record>
+  <record name="plonetheme.jquerymobile.viewlet.globalsections.filterreveal">
+     <field type="plone.registry.field.Bool">
+         <title>data-filter-reveal</title>
+     </field>
+     <value>False</value>
+  </record>
 
 </registry>

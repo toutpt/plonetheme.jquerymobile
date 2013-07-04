@@ -2,6 +2,8 @@ from zope import component
 from plone.app.layout.viewlets import common
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plonetheme.jquerymobile import i18n
+from plone.app.layout.viewlets.common import GlobalSectionsViewlet
+from plone.registry.interfaces import IRegistry
 _ = i18n._
 
 
@@ -78,3 +80,20 @@ class SiteTitle(common.ViewletBase):
 
     def render(self):
         return self.title
+
+
+class GlobalSections(GlobalSectionsViewlet):
+    """make the globasection use filters"""
+    def update(self):
+        GlobalSectionsViewlet.update(self)
+        self.portal_registry = component.getUtility(IRegistry)
+
+        key = "plonetheme.jquerymobile.viewlet.globalsections.filter"
+        self.data_filter_reveal = "false"
+        if self.portal_registry.get(key, False):
+            self.data_filter_reveal = "true"
+
+        key = "plonetheme.jquerymobile.viewlet.globalsections.filterreveal"
+        self.data_filter = "false"
+        if self.portal_registry.get(key, False):
+            self.data_filter = "true"
