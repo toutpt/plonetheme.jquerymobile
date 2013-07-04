@@ -27,6 +27,12 @@ div[contenteditable=true]{
 }
 
 /*panel styles*/
+.ui-panel-inner {
+    padding: 0
+}
+.ui-panel-inner .portletWrapper {
+    padding: 5px 15px;
+}
 @media screen and (max-width: 767px){
 	/* panel will take 100% */
 	.ui-panel {width: 100%}
