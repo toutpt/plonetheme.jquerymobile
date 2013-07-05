@@ -29,37 +29,21 @@ class IPanelLeft(IViewletManager):
 class IPanelRight(IViewletManager):
     """A viewlet manager that sits inside IBelowContent"""
 
+try:
+    from plone.app.viewletmanager.manager import WeightedOrderedViewletManager
+except ImportError:
+    class WeightedOrderedViewletManager(OrderedViewletManager):
+        def sort(self, viewlets):
 
-class WeightedOrderedViewletManager(OrderedViewletManager):
-    """This is a new viewlet manager"""
+            def get_weight(viewlet_tuple):
+                name, viewlet = viewlet_tuple
+                weight = getattr(viewlet, 'weight', 0)
+                try:
+                    weight = int(weight)
+                except ValueError:
+                    weight = 0
+                return weight
 
-    def sort(self, viewlets):
-        """Sort the viewlets.
+            viewlets.sort(key=get_weight)
 
-        ``viewlets`` is a list of tuples of the form (name, viewlet).
-
-        This sorts the viewlets by the order looked up from the local utility
-        which implements the IViewletSettingsStorage interface. The remaining
-        ones are sorted just like Five does it.
-        """
-        results = OrderedViewletManager.sort(self, viewlets)
-        def weight_cmp(x, y):
-            """Compare the two objects x and y and return an integer according
-            to the outcome. The return value:
-            * negative if x < y,
-            * zero if x == y
-            * strictly positive if x > y.
-            """
-            xviewlet = x[1]
-            yviewlet = y[1]
-            xweight = getattr(xviewlet, "weight", 0)
-            yweight = getattr(yviewlet, "weight", 0)
-            if xweight < yweight:
-                return -1
-            elif xweight == yweight:
-                return 0
-            return 1
-
-        results.sort(cmp=weight_cmp)
-
-        return results
+            return viewlets
