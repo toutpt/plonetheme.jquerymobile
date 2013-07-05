@@ -52,8 +52,8 @@ class WeightedOrderedViewletManager(OrderedViewletManager):
             """
             xviewlet = x[1]
             yviewlet = y[1]
-            xweight = getattr(xviewlet, "weight", 1000)
-            yweight = getattr(yviewlet, "weight", 1000)
+            xweight = getattr(xviewlet, "weight", 0)
+            yweight = getattr(yviewlet, "weight", 0)
             if xweight < yweight:
                 return -1
             elif xweight == yweight:

@@ -4,7 +4,7 @@ from Products.CMFCore.utils import getToolByName
 
 
 class PanelLeftHeader(common.ViewletBase):
-    weight = 0
+    weight = -100
 
 
 class PanelRightHeader(common.ViewletBase):
@@ -15,7 +15,7 @@ class UserToolBar(common.ContentActionsViewlet, common.ContentViewsViewlet):
     """add content"""
 
     index = ViewPageTemplateFile('templates/usertoolbar.pt')
-    weight = 10
+    weight = -10
     def update(self):
         common.ContentActionsViewlet.update(self)
         common.ContentViewsViewlet.update(self)

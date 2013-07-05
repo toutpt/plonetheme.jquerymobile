@@ -35,12 +35,13 @@ class PanelLeftAction(BaseHeaderAction):
     icon = "bars"
     iconpos = "notext"
     label = _(u"Open left panel")
-    weight = 0
+    weight = -100
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
-        hasportlets = plone_view.have_portlets('plone.leftcolumn')
-        return hasportlets
+        #we are in a viewlet itself in a viewlet ...
+        view = self.view.__parent__
+        return plone_view.have_portlets('plone.leftcolumn', view=view)
 
 
 class PanelRightAction(BaseHeaderAction):
@@ -48,17 +49,19 @@ class PanelRightAction(BaseHeaderAction):
     icon = "grid"
     iconpos = "notext"
     label = _(u"Open right panel")
-    weight = 10000
+    weight = 100
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
-        return plone_view.have_portlets('plone.rightcolumn', self.context)
+        #we are in a viewlet itself in a viewlet ...
+        view = self.view.__parent__
+        return plone_view.have_portlets('plone.rightcolumn', view=view)
 
 
 class HomeHeaderAction(BaseHeaderAction):
     icon = "home"
     iconpos = "notext"
-    weight = 10
+    weight = -10
 
     @property
     def href(self):

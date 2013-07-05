@@ -1,4 +1,5 @@
 <div class="ui-header ui-bar-a" i18n:domain="plonetheme.jquerymobile">
-    <a href="#panel-right" class="ui-btn-left" data-rel="close" data-role="button" data-icon="remove" data-iconpos="notext" i18n:translate="close_panel">Close panel</a>
+    <a href="#panel-right" class="ui-btn-left" data-rel="close" data-role="button"
+       data-icon="remove" data-iconpos="right" i18n:translate="close_panel">Close panel</a>
     <span class="ui-title"></span>
 </div>
