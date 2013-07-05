@@ -67,16 +67,19 @@
   <div data-role="content" id="content">
     <metal:block define-slot="content">
     <div metal:define-macro="content"
-         tal:define="show_border context/@@plone/showEditableBorder; show_border python:show_border and not ajax_load;">
+         tal:define="show_border context/@@plone/showEditableBorder;
+             show_border python:show_border and not ajax_load;">
       <metal:slot define-slot="body">
         <metal:bodytext define-slot="main">
 
           <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
-          <div id="edit-bar" data-role="collapsible" data-theme="b" tal:condition="show_border">
+          <div id="edit-bar" tal:condition="show_border"
+               data-role="collapsible" data-theme="b">
               <h4 i18n:translate="">Edit bar</h4>
               <div tal:content="structure provider:plone.contentviews"/>
           </div>
-          <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" />
+          <div id="viewlet-above-content-title"
+               tal:content="structure provider:plone.abovecontenttitle" />
           <metal:title define-slot="content-title">
               <metal:comment tal:content="nothing">
                   If you write a custom title always use
@@ -87,7 +90,8 @@
               </h1>
           </metal:title>
 
-          <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" />
+          <div id="viewlet-below-content-title"
+              tal:content="structure provider:plone.belowcontenttitle" />
 
           <metal:description define-slot="content-description">
               <metal:comment tal:content="nothing">
@@ -99,13 +103,16 @@
               </div>
           </metal:description>
 
-          <div id="viewlet-above-content-body" tal:content="structure provider:plone.abovecontentbody" />
+          <div id="viewlet-above-content-body"
+               tal:content="structure provider:plone.abovecontentbody" />
           <metal:text define-slot="content-core" tal:content="nothing">
             Page body text
           </metal:text>
-          <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
+          <div id="viewlet-below-content-body"
+               tal:content="structure provider:plone.belowcontentbody" />
 
-          <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" />
+          <div id="viewlet-below-content"
+               tal:content="structure provider:plone.belowcontent" />
 
         </metal:bodytext>
       </metal:slot>
@@ -118,16 +125,19 @@
   </div>
 
 <tal:panels i18n:domain="plonetheme.jquerymobile">
-<div data-role="panel" data-position="left" data-position-fixed="true" id="panel-left" tal:condition="python:plone_view.have_portlets('plone.leftcolumn')" data-swipe-close="false" data-dismissible="false">
+<div id="panel-left" tal:condition="python:plone_view.have_portlets('plone.leftcolumn')"
+     data-role="panel" data-position="left" data-position-fixed="true"
+     data-swipe-close="false" data-dismissible="false">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
   <div tal:replace="structure provider:plone.leftcolumn"></div>
 </div>
-<div data-role="panel" data-position="right" data-position-fixed="true" id="panel-right" tal:condition="python:plone_view.have_portlets('plone.rightcolumn')" data-swipe-close="false" data-dismissible="false">
+<div id="panel-right" tal:condition="python:plone_view.have_portlets('plone.rightcolumn')"
+     data-role="panel" data-position="right" data-position-fixed="true"
+     data-swipe-close="false" data-dismissible="false">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelright" />
   <div tal:replace="structure provider:plone.rightcolumn"></div>
 </div>
 </tal:panels>
-
 
 </div>
 
