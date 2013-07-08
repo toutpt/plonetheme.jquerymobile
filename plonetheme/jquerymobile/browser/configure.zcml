@@ -80,5 +80,10 @@
         file="resources/search.js"
         layer="plonetheme.jquerymobile.layer.Layer"
         />
+    <browser:resource
+        name="plone.app.collection.css"
+        file="resources/empty.css"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
 
 </configure>
