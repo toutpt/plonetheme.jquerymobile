@@ -1,109 +1,107 @@
-##############################################################################
-#
-# Copyright (c) 2003-2004 Zope Foundation and Contributors.
-# All Rights Reserved.
-#
-# This software is subject to the provisions of the Zope Public License,
-# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
-# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
-# FOR A PARTICULAR PURPOSE.
-#
-##############################################################################
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Thu Jul  4 09:07:06 2013\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-07-08 13:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Zope 3 Developers <zope-dev@zope.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: zope/app/locales/extract.py\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plonetheme.jquerymobile\n"
 
-#: plonetheme.jquerymobile:/browser/viewlets/header.py:37
-msgid "Open left panel"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/header.py:52
-msgid "Open right panel"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/header.py:63
-msgid "Search"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:13
-#. Default: "The Plone CMS/WCM."
-msgid "title_built_with_plone"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:13
-#. Default: "Plone"
-msgid "label_powered_by_plone"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:17
-#. Default: "The jQuery JavaScript library."
-msgid "title_built_with_jquery"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:17
-#. Default: "jQuery"
-msgid "label_powered_by_jquery"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:21
-#. Default: "The jQuery Mobile web framework."
-msgid "title_built_with_jquerymobile"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:21
-#. Default: "jQuery mobile"
-msgid "label_powered_by_jquerymobile"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:5
-#. Default: "Python"
-msgid "label_powered_by_python"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:5
-#. Default: "The Python programming language."
-msgid "title_built_with_python"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:9
-#. Default: "Zope"
-msgid "label_powered_by_zope"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/colophon.pt:9
-#. Default: "The Zope Framework & Application server."
-msgid "title_built_with_zope"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/document_byline.pt:6
+#: ./browser/viewlets/templates/document_byline.pt:6
 msgid "About"
 msgstr ""
 
-#: plonetheme.jquerymobile:/browser/viewlets/templates/panel_left_header.pt:2
-#: plonetheme.jquerymobile:/browser/viewlets/templates/panel_right_header.pt:2
-#. Default: "Close panel"
-msgid "close_panel"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/sections.pt:3
-msgid "Sections Menu"
-msgstr ""
-
-#: plonetheme.jquerymobile:/browser/viewlets/templates/usertoolbar.pt:9
+#: ./browser/viewlets/templates/usertoolbar.pt:9
 msgid "Manage"
 msgstr ""
 
-#: plonetheme.jquerymobile:/jbot/archetypes.referencebrowserwidget.skins.referencebrowser.referencebrowser.pt:187
+#: ./browser/viewlets/header.py:37
+msgid "Open left panel"
+msgstr ""
+
+#: ./browser/viewlets/header.py:51
+msgid "Open right panel"
+msgstr ""
+
+#: ./browser/viewlets/header.py:78
+msgid "Search"
+msgstr ""
+
+#: ./browser/viewlets/templates/sections.pt:3
+msgid "Sections Menu"
+msgstr ""
+
+#: ./jbot/archetypes.referencebrowserwidget.skins.referencebrowser.referencebrowser.pt:187
 msgid "This feature is not supported on mobile"
+msgstr ""
+
+#: ./skins/plonetheme_jquerymobile_custom/main_template.pt:78
+msgid "Toolbar"
+msgstr ""
+
+#. Default: "Close panel"
+#: ./browser/viewlets/templates/panel_left_header.pt:2
+#: ./browser/viewlets/templates/panel_right_header.pt:2
+msgid "close_panel"
+msgstr ""
+
+#. Default: "jQuery"
+#: ./browser/viewlets/templates/colophon.pt:17
+msgid "label_powered_by_jquery"
+msgstr ""
+
+#. Default: "jQuery mobile"
+#: ./browser/viewlets/templates/colophon.pt:21
+msgid "label_powered_by_jquerymobile"
+msgstr ""
+
+#. Default: "Plone"
+#: ./browser/viewlets/templates/colophon.pt:13
+msgid "label_powered_by_plone"
+msgstr ""
+
+#. Default: "Python"
+#: ./browser/viewlets/templates/colophon.pt:5
+msgid "label_powered_by_python"
+msgstr ""
+
+#. Default: "Zope"
+#: ./browser/viewlets/templates/colophon.pt:9
+msgid "label_powered_by_zope"
+msgstr ""
+
+#. Default: "The jQuery JavaScript library."
+#: ./browser/viewlets/templates/colophon.pt:17
+msgid "title_built_with_jquery"
+msgstr ""
+
+#. Default: "The jQuery Mobile web framework."
+#: ./browser/viewlets/templates/colophon.pt:21
+msgid "title_built_with_jquerymobile"
+msgstr ""
+
+#. Default: "The Plone CMS/WCM."
+#: ./browser/viewlets/templates/colophon.pt:13
+msgid "title_built_with_plone"
+msgstr ""
+
+#. Default: "The Python programming language."
+#: ./browser/viewlets/templates/colophon.pt:5
+msgid "title_built_with_python"
+msgstr ""
+
+#. Default: "The Zope Framework & Application server."
+#: ./browser/viewlets/templates/colophon.pt:9
+msgid "title_built_with_zope"
 msgstr ""
 

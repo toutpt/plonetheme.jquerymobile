@@ -75,7 +75,7 @@
           <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
           <div id="edit-bar" tal:condition="show_border"
                data-role="collapsible" data-theme="b">
-              <h4 i18n:translate="">Edit bar</h4>
+              <h4 i18n:domain="plonetheme.jquerymobile" i18n:translate="">Toolbar</h4>
               <div tal:content="structure provider:plone.contentviews"/>
           </div>
           <div id="viewlet-above-content-title"
