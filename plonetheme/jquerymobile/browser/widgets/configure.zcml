@@ -17,5 +17,19 @@
         template="image_input.pt"
         />
 
+    <z3c:widgetTemplate
+        mode="input"
+        widget="z3c.form.interfaces.IOrderedSelectWidget"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        template="orderedselect_input.pt"
+        />
+
+    <z3c:widgetTemplate
+        mode="input"
+        widget="z3c.form.interfaces.ISelectWidget"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        template="select_input.pt"
+        />
+
 
 </configure>
