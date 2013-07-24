@@ -85,5 +85,15 @@
         file="resources/empty.css"
         layer="plonetheme.jquerymobile.layer.Layer"
         />
+    <browser:resource
+        name="manage-contentrules.js"
+        file="resources/contentrules.js"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
+    <browser:resource
+        name="manage-contentrule-elements.js"
+        file="resources/contentrule-elements.js"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
 
 </configure>
