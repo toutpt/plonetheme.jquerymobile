@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonetheme.jquerymobile">
+
+  <!-- Doesn't work
+       See Content Type Condition (content rules) for an example of select multiple  -->
+
+  <adapter
+      for="zope.schema.interfaces.ISet
+           zope.schema.interfaces.IVocabularyTokenized
+           plonetheme.jquerymobile.layer.Layer"
+      provides="zope.formlib.interfaces.ISimpleInputWidget"
+      factory=".multiselect.MultiSelectSetWidget"
+      permission="zope.Public"
+      />
+
+  <adapter
+      for="zope.schema.interfaces.IFrozenSet
+           zope.schema.interfaces.IVocabularyTokenized
+           plonetheme.jquerymobile.layer.Layer"
+      provides="zope.formlib.interfaces.ISimpleInputWidget"
+      factory=".multiselect.MultiSelectFrozenSetWidget"
+      permission="zope.Public"
+      />
+
+  <adapter
+      for="zope.schema.interfaces.ISet
+           zope.schema.interfaces.IIterableSource
+           plonetheme.jquerymobile.layer.Layer"
+      provides="zope.formlib.interfaces.ISimpleInputWidget"
+      factory=".source.SourceMultiSelectSetWidget"
+      permission="zope.Public"
+      />
+
+</configure>
