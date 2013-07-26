@@ -1,4 +1,4 @@
-from plone.app.layout.viewlets.common import ViewletBase, ContentViewsViewlet
+from plone.app.layout.viewlets.common import ContentViewsViewlet
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 

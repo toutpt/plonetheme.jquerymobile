@@ -1,4 +1,3 @@
-from zope.formlib.widget import renderElement
 from zope.formlib import itemswidgets
 
 

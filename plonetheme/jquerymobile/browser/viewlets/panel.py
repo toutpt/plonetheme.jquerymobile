@@ -16,6 +16,7 @@ class UserToolBar(common.ContentActionsViewlet, common.ContentViewsViewlet):
 
     index = ViewPageTemplateFile('templates/usertoolbar.pt')
     weight = -10
+
     def update(self):
         common.ContentActionsViewlet.update(self)
         common.ContentViewsViewlet.update(self)

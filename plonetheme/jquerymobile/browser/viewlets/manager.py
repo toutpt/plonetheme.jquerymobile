@@ -35,6 +35,7 @@ except ImportError:
     class WeightedOrderedViewletManager(OrderedViewletManager):
         def sort(self, viewlets):
             results = super(WeightedOrderedViewletManager, self).sort(viewlets)
+
             def get_weight(viewlet_tuple):
                 name, viewlet = viewlet_tuple
                 weight = getattr(viewlet, 'weight', 0)
@@ -43,5 +44,6 @@ except ImportError:
                 except ValueError:
                     weight = 0
                 return weight
+
             results.sort(key=get_weight)
             return results
