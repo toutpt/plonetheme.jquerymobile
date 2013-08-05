@@ -57,10 +57,11 @@
                                   has_groups python:bool(groups);
                                   form_tabbing python:(has_groups and enable_form_tabbing) and 'enableFormTabbing' or '';
                                   show_default_label python:has_groups and default_fieldset_label and len(view.widgets);
+				  enableUnloadProtection python:'enableUnloadProtection' if getattr(view, 'enableUnloadProtection', True) else ''
                                   "
                       tal:attributes="action view/action|request/getURL; 
                                       enctype view/enctype;
-                                      class python:'rowlike enableUnloadProtection %s %s kssattr-formname-%s' % (form_tabbing, form_class, view.__name__ or request.getURL().split('/')[-1]);
+                                      class python:'rowlike %s %s %s kssattr-formname-%s' % (enableUnloadProtection, form_tabbing, form_class, view.__name__ or request.getURL().split('/')[-1]);
                                       id view/id;
                                       method view/method|string:'post'
                                       ">
