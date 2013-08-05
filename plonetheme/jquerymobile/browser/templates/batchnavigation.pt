@@ -1,0 +1,67 @@
+<!-- Navigation -->
+<tal:batchnavigation define="batch view/batch|nothing;"
+                   condition="batch"
+                   metal:define-macro="navigation"
+                   >
+<div class="listingBar" data-role="controlgroup" data-type="horizontal"
+     i18n:domain="plone"
+     tal:condition="batch/multiple_pages">
+    <tal:previous tal:condition="batch/has_previous">
+        <a href="" data-role="button" data-icon="arrow-left"
+           tal:attributes="href python:view.make_link(batch.previouspage)">
+           <span i18n:translate="batch_previous_x_items" tal:omit-tag="">
+               Previous
+               <span i18n:name="number" tal:omit-tag="" tal:content="batch/pagesize">n</span>
+               items
+           </span>
+        </a>
+    </tal:previous>
+
+    <tal:next tal:condition="batch/has_next">
+        <a href="" data-role="button" data-icon="arrow-right"
+           tal:attributes="href python:view.make_link(batch.nextpage)">
+           <span i18n:translate="batch_next_x_items" tal:omit-tag="">
+               Next
+               <span i18n:name="number" tal:omit-tag="" tal:content="batch/next_item_count">n</span>
+               items
+           </span>
+        </a>
+    </tal:next>
+
+    <!-- Link to first -->
+    <tal:first tal:condition="batch/show_link_to_first">
+        <a href="" data-role="button" data-icon="fast-backward"
+           tal:attributes="href python:view.make_link(1)">1</a>
+        <span tal:condition="batch/second_page_not_in_navlist"
+              tal:omit-tag="">
+           ...
+        </span>
+    </tal:first>
+
+    <!-- Pagelist with links to previous pages for quick navigation -->
+    <tal:previous tal:repeat="pagenumber batch/previous_pages"
+          tal:omit-tag="" >
+      <a href="" tal:content="pagenumber" data-role="button"
+         tal:attributes="href python:view.make_link(pagenumber)"/>
+    </tal:previous>
+
+    <!-- Current page -->
+    <tal:current tal:condition="batch/navlist">
+        <a href="#" data-role="button" class="ui-disabled" tal:content="batch/pagenumber">Current page number</a>
+    </tal:current>
+
+    <!-- Pagelist with links to next pages for quick navigation -->
+    <tal:nexts tal:repeat="pagenumber batch/next_pages"
+          tal:omit-tag="" >
+      <a href="" tal:content="pagenumber" data-role="button"
+         tal:attributes="href python:view.make_link(pagenumber)"/>
+    </tal:nexts>
+
+    <!-- Link to last -->
+    <span tal:condition="batch/show_link_to_last">
+        <a href="" data-role="button" data-icon="fast-forward"
+           tal:attributes="href python:view.make_link(batch.lastpage)"
+           tal:content="batch/lastpage">3457</a>
+    </span>
+</div>
+</tal:batchnavigation>

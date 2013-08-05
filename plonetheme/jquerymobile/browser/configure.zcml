@@ -74,6 +74,14 @@
         layer="plonetheme.jquerymobile.layer.Layer"
         />
 
+    <browser:page
+        name="batchnavigation"
+        for="*"
+        permission="zope.Public"
+        class="plone.batching.browser.PloneBatchView"
+        template="templates/batchnavigation.pt"
+        layer="plonetheme.jquerymobile.layer.Layer"
+        />
 
     <browser:resource
         name="search.js"
