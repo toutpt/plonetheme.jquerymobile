@@ -10,11 +10,10 @@
     <tal:first tal:condition="batch/show_link_to_first">
         <a href="" data-role="button" data-icon="fast-backward"
            tal:attributes="href python:view.make_link(1)"></a>
-    </tal:first>
-
-    <tal:second_page_not_in_navlist tal:condition="batch/second_page_not_in_navlist">
+      <tal:second_page_not_in_navlist tal:condition="batch/second_page_not_in_navlist">
         <a href="#" data-role="button" class="ui-disabled">&hellip;</a>
-    </tal:second_page_not_in_navlist>
+      </tal:second_page_not_in_navlist>
+    </tal:first>
 
     <tal:previous tal:repeat="pagenumber batch/previous_pages"
           tal:omit-tag="" >
@@ -34,11 +33,10 @@
          tal:attributes="href python:view.make_link(pagenumber)"/>
     </tal:nexts>
 
-    <tal:before_last_page_not_in_navlist tal:condition="batch/before_last_page_not_in_navlist">
-        <a href="#" data-role="button" class="ui-disabled">&hellip;</a>
-    </tal:before_last_page_not_in_navlist>
-
     <tal:last tal:condition="batch/show_link_to_last">
+      <tal:before_last_page_not_in_navlist tal:condition="batch/before_last_page_not_in_navlist">
+        <a href="#" data-role="button" class="ui-disabled">&hellip;</a>
+      </tal:before_last_page_not_in_navlist>
         <a href="" data-role="button" data-icon="fast-forward"
            tal:attributes="href python:view.make_link(batch.lastpage)"></a>
     </tal:last>
