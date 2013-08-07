@@ -498,8 +498,8 @@
 .ui-icon-key:before                  { content: "\f084"; }
 .ui-icon-cogs:before                 { content: "\f085"; }
 .ui-icon-comments:before             { content: "\f086"; }
-.ui-icon-thumbs-up:before            { content: "\f087"; }
-.ui-icon-thumbs-down:before          { content: "\f088"; }
+.ui-icon-thumbs-up-alt:before            { content: "\f087"; }
+.ui-icon-thumbs-down-alt:before          { content: "\f088"; }
 .ui-icon-star-half:before            { content: "\f089"; }
 .ui-icon-heart-empty:before          { content: "\f08a"; margin-top: 2px; }
 .ui-icon-signout:before              { content: "\f08b"; }
@@ -753,6 +753,9 @@
 .ui-icon-share-sign:before {
   content: "\f14d";
 }
+
+/* New in 3.2*/
+
 .ui-icon-compass:before {
   content: "\f14e";
 }
