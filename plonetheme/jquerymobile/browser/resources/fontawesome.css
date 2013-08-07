@@ -107,6 +107,7 @@
 .ui-icon-off:before                  { content: "\f011"; }
 .ui-icon-signal:before               { content: "\f012"; }
 .ui-icon-cog:before                  { content: "\f013"; }
+/*.ui-icon-gear:before                 { content: "\f013"; }*/
 .ui-icon-trash:before                { content: "\f014"; }
 .ui-icon-home:before                 { content: "\f015"; }
 .ui-icon-file:before                 { content: "\f016"; }
@@ -222,6 +223,7 @@
 .ui-icon-camera-retro:before         { content: "\f083"; }
 .ui-icon-key:before                  { content: "\f084"; }
 .ui-icon-cogs:before                 { content: "\f085"; }
+.ui-icon-gears:before                 { content: "\f085"; }
 .ui-icon-comments:before             { content: "\f086"; }
 .ui-icon-thumbs-up:before            { content: "\f087"; }
 .ui-icon-thumbs-down:before          { content: "\f088"; }
@@ -751,3 +753,185 @@
 .ui-icon-share-sign:before {
   content: "\f14d";
 }
+.ui-icon-compass:before {
+  content: "\f14e";
+}
+.ui-icon-collapse:before {
+  content: "\f150";
+}
+.ui-icon-collapse-top:before {
+  content: "\f151";
+}
+.ui-icon-expand:before {
+  content: "\f152";
+}
+.ui-icon-euro:before,
+.ui-icon-eur:before {
+  content: "\f153";
+}
+.ui-icon-gbp:before {
+  content: "\f154";
+}
+.ui-icon-dollar:before,
+.ui-icon-usd:before {
+  content: "\f155";
+}
+.ui-icon-rupee:before,
+.ui-icon-inr:before {
+  content: "\f156";
+}
+.ui-icon-yen:before,
+.ui-icon-jpy:before {
+  content: "\f157";
+}
+.ui-icon-renminbi:before,
+.ui-icon-cny:before {
+  content: "\f158";
+}
+.ui-icon-won:before,
+.ui-icon-krw:before {
+  content: "\f159";
+}
+.ui-icon-bitcoin:before,
+.ui-icon-btc:before {
+  content: "\f15a";
+}
+.ui-icon-file:before {
+  content: "\f15b";
+}
+.ui-icon-file-text:before {
+  content: "\f15c";
+}
+.ui-icon-sort-by-alphabet:before {
+  content: "\f15d";
+}
+.ui-icon-sort-by-alphabet-alt:before {
+  content: "\f15e";
+}
+.ui-icon-sort-by-attributes:before {
+  content: "\f160";
+}
+.ui-icon-sort-by-attributes-alt:before {
+  content: "\f161";
+}
+.ui-icon-sort-by-order:before {
+  content: "\f162";
+}
+.ui-icon-sort-by-order-alt:before {
+  content: "\f163";
+}
+.ui-icon-thumbs-up:before {
+  content: "\f164";
+}
+.ui-icon-thumbs-down:before {
+  content: "\f165";
+}
+.ui-icon-youtube-sign:before {
+  content: "\f166";
+}
+.ui-icon-youtube:before {
+  content: "\f167";
+}
+.ui-icon-xing:before {
+  content: "\f168";
+}
+.ui-icon-xing-sign:before {
+  content: "\f169";
+}
+.ui-icon-youtube-play:before {
+  content: "\f16a";
+}
+.ui-icon-dropbox:before {
+  content: "\f16b";
+}
+.ui-icon-stackexchange:before {
+  content: "\f16c";
+}
+.ui-icon-instagram:before {
+  content: "\f16d";
+}
+.ui-icon-flickr:before {
+  content: "\f16e";
+}
+.ui-icon-adn:before {
+  content: "\f170";
+}
+.ui-icon-bitbucket:before {
+  content: "\f171";
+}
+.ui-icon-bitbucket-sign:before {
+  content: "\f172";
+}
+.ui-icon-tumblr:before {
+  content: "\f173";
+}
+.ui-icon-tumblr-sign:before {
+  content: "\f174";
+}
+.ui-icon-long-arrow-down:before {
+  content: "\f175";
+}
+.ui-icon-long-arrow-up:before {
+  content: "\f176";
+}
+.ui-icon-long-arrow-left:before {
+  content: "\f177";
+}
+.ui-icon-long-arrow-right:before {
+  content: "\f178";
+}
+.ui-icon-apple:before {
+  content: "\f179";
+}
+.ui-icon-windows:before {
+  content: "\f17a";
+}
+.ui-icon-android:before {
+  content: "\f17b";
+}
+.ui-icon-linux:before {
+  content: "\f17c";
+}
+.ui-icon-dribbble:before {
+  content: "\f17d";
+}
+.ui-icon-skype:before {
+  content: "\f17e";
+}
+.ui-icon-foursquare:before {
+  content: "\f180";
+}
+.ui-icon-trello:before {
+  content: "\f181";
+}
+.ui-icon-female:before {
+  content: "\f182";
+}
+.ui-icon-male:before {
+  content: "\f183";
+}
+.ui-icon-gittip:before {
+  content: "\f184";
+}
+.ui-icon-sun:before {
+  content: "\f185";
+}
+.ui-icon-moon:before {
+  content: "\f186";
+}
+.ui-icon-archive:before {
+  content: "\f187";
+}
+.ui-icon-bug:before {
+  content: "\f188";
+}
+.ui-icon-vk:before {
+  content: "\f189";
+}
+.ui-icon-weibo:before {
+  content: "\f18a";
+}
+.ui-icon-renren:before {
+  content: "\f18b";
+}
+
