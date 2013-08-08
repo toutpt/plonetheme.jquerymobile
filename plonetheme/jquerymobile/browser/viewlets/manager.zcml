@@ -34,6 +34,12 @@
       class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
       />
   <browser:viewletManager
+      name="plonetheme.jquerymobile.editbar"
+      provides="plonetheme.jquerymobile.browser.viewlets.manager.IEditBar"
+      permission="zope2.View"
+      class="plonetheme.jquerymobile.browser.viewlets.manager.WeightedOrderedViewletManager"
+      />
+  <browser:viewletManager
       name="plonetheme.jquerymobile.footer"
       provides="plonetheme.jquerymobile.browser.viewlets.manager.IFooter"
       permission="zope2.View"

@@ -71,6 +71,16 @@
         permission="zope2.View"
         layer="plonetheme.jquerymobile.layer.Layer"
         />
+    <!--  FIX contentactions to be for all views -->
+    <browser:viewlet
+        name="plone.contentactions"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IContentViews"
+        class="plone.app.layout.viewlets.common.ContentActionsViewlet"
+        permission="zope2.View"
+        layer="plonetheme.jquerymobile.layer.Layer"
+      />
+  
   <!-- global_statusmessage -->
   <browser:viewlet
       name="plonetheme.jquerymobile.global_statusmessage"
@@ -167,6 +177,15 @@
       manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
       template="templates/site_actions.pt"
       class="plone.app.layout.viewlets.common.SiteActionsViewlet"
+      permission="zope2.View"
+      layer="plonetheme.jquerymobile.layer.Layer"
+      />
+
+  <browser:viewlet
+      name="plonetheme.jquerymobile.editbar"
+      manager="plonetheme.jquerymobile.browser.viewlets.manager.IEditBar"
+      template="templates/edit_bar.pt"
+      class="plonetheme.jquerymobile.browser.viewlets.editbar.EditBar"
       permission="zope2.View"
       layer="plonetheme.jquerymobile.layer.Layer"
       />

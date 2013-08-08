@@ -24,8 +24,6 @@
                 </a>
               </li>
             </tal:views>
-
         </ul>
-
     </tal:block>
 </div>
