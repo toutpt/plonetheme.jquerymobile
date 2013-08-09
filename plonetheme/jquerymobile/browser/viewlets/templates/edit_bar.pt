@@ -1,0 +1,10 @@
+<tal:check tal:define="ajax_load request/ajax_load | nothing;
+    view nocall:view;
+    show_border context/@@plone/showEditableBorder;
+    show_border python:show_border and not ajax_load;">
+<div id="edit-bar" tal:condition="show_border"
+     data-role="collapsible" data-theme="b">
+    <h4 i18n:domain="plonetheme.jquerymobile" i18n:translate="">Toolbar</h4>
+    <div tal:content="structure provider:plone.contentviews"/>
+</div>
+</tal:check>
