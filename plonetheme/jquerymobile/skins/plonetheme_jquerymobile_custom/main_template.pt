@@ -58,7 +58,7 @@
     tal:attributes="class body_class;
                     dir python:isRTL and 'rtl' or 'ltr'">
 
-<div data-role="page" class="page ui-responsive-panel">
+<div data-role="page" class="page ui-responsive-panel" tal:attributes="id python:plone_view.getPageId(template, view);">
 
   <div data-role="header">
     <div tal:replace="structure provider:plone.portaltop" />

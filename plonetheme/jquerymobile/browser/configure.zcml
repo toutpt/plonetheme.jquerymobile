@@ -83,6 +83,15 @@
         layer="plonetheme.jquerymobile.layer.Layer"
         />
 
+    <browser:page
+        for="*"
+        name="plone"
+        class=".ploneview.PloneView"
+        permission="zope.Public"
+        allowed_interface=".ploneview.IPloneView"
+        layer="plonetheme.jquerymobile.layer.Layer"
+      />
+
     <browser:resource
         name="search.js"
         file="resources/search.js"

@@ -1,4 +1,4 @@
-$.mobile.ajaxEnabled = false;
+//$.mobile.ajaxEnabled = false;
 
 /**
 @function responsiveIframes
