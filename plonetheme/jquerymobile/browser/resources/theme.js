@@ -3,7 +3,7 @@
 /**
 @function responsiveIframes
  */
-function responsiveIframes()
+var PloneThemeJQMResponsiveIframes = function()
 {
   $('iframe').each(function(){
     var
@@ -24,7 +24,7 @@ function responsiveIframes()
     }
   });
 }
-$(window).on('resize load',responsiveIframes);
+
 
 /**
 @function convertStatusMessageToJQM
@@ -39,7 +39,7 @@ transformed to ->
         <div class="ui-icon ui-icon-info"></div>
     </div>
 */
-function convertStatusMessageToJQM(){
+var PloneThemeJQMConvertStatusMessageToJQM = function(){
 	$('dl.portalMessage:visible').each(function() {
 		console.log("status message transformed ");
 		var message = $(this).find("dd").html();
@@ -78,7 +78,7 @@ converted To ->
     </ul>
 </div>
 */
-function convertControlPanelToJQM(){
+var PloneThemeJQMConvertControlPanelToJQM = function(){
 	$('ul.configlets').attr('data-role', 'listview').parent().removeAttr('style');
 	$('ul.configlets img').remove();
 }
@@ -87,7 +87,7 @@ function convertControlPanelToJQM(){
 This function converts forms to JQM. It wraps actions into a controlgroup
 and add data-theme="b" to the first action (which should be the most important).
 */
-function convertFormsToJQM(){
+var PloneThemeJQMConvertFormsToJQM = function(){
 	var formselector = ".formControls span";
 	if ($(formselector ).length == 0){
 		formselector = ".formControls";
@@ -106,7 +106,7 @@ This add data-role="table" attribute to table with listing class.
 
 Make sure table uses thead/tbody tags
 */
-function convertTableToJQM(){
+var PloneThemeJQMConvertTableToJQM = function (){
 	$('table.listing[data-role!="table"]').each(function(){
 		//TODO: exclude vertical (eventdetails)
 		//TODO: add a tbody wrapper
@@ -157,7 +157,7 @@ theme: use theme-b
     </ul>
 </div></div>
 */
-function convertPortletToJQM(){
+var PloneThemeJQMConvertPortletToJQM = function (){
 	$("dl.portlet").each(function(){
 		var newPortlet = document.createElement("div");
 		var newTitle = document.createElement("h4");
@@ -179,12 +179,16 @@ function convertPortletToJQM(){
 	$('.portlet[data-role="collapsible"]').attr("data-theme", "b");
 	$('fieldset[data-role="collapsible"]').attr("data-theme", "b");
 }
-$(document).on("pagebeforecreate", function(){
-	convertPortletToJQM();
-	convertTableToJQM();
-	convertControlPanelToJQM();
-	convertFormsToJQM();
-	convertStatusMessageToJQM();
+var PloneThemeJQMUpdate = function(){
+	PloneThemeJQMResponsiveIframes
+	PloneThemeJQMConvertPortletToJQM();
+	PloneThemeJQMConvertTableToJQM();
+	PloneThemeJQMConvertControlPanelToJQM();
+	PloneThemeJQMConvertFormsToJQM();
+	PloneThemeJQMConvertStatusMessageToJQM();
+}
+$(document).on("pagebeforeshow", function(){
+	PloneThemeJQMUpdate();
 });
 
 $( document ).on( "pageinit", ".page", function() {
