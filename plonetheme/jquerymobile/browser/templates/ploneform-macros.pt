@@ -76,7 +76,7 @@
                           tal:attributes="value current_fieldset"
                           />
 
-<div data-role="collapsible-set">
+<div data-role="collapsible-set" tal:omit-tag="not:show_default_label">
 
                       <!-- Default fieldset -->
                       <metal:define
@@ -84,7 +84,7 @@
                           tal:define="show_default_label show_default_label|nothing;
                                       has_groups has_groups|nothing">
 
-                  <div data-role="collapsible" class="formfieldset">
+                  <div data-role="collapsible" class="formfieldset" tal:omit-tag="not:show_default_label">
                     <h3 tal:condition="show_default_label" tal:content="default_fieldset_label">Form name</h3>
 
                     <div class="content" data-slug="fieldset-default">
