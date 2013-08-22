@@ -177,10 +177,12 @@ var PloneThemeJQMConvertPortletToJQM = function (){
 		$(this).replaceWith(newPortlet);
 	});
 	$('.portlet[data-role="collapsible"]').attr("data-theme", "b");
+	$('.portlet[data-role="collapsible"]').parent().trigger("create");
 	$('fieldset[data-role="collapsible"]').attr("data-theme", "b");
 }
 var PloneThemeJQMUpdate = function(){
-	PloneThemeJQMResponsiveIframes
+//	console.log('PloneThemeJQMUpdate');
+	PloneThemeJQMResponsiveIframes();
 	PloneThemeJQMConvertPortletToJQM();
 	PloneThemeJQMConvertTableToJQM();
 	PloneThemeJQMConvertControlPanelToJQM();
@@ -188,6 +190,7 @@ var PloneThemeJQMUpdate = function(){
 	PloneThemeJQMConvertStatusMessageToJQM();
 }
 $(document).on("pagebeforeshow", function(){
+//	console.log("pagebeforeshow");
 	PloneThemeJQMUpdate();
 });
 
