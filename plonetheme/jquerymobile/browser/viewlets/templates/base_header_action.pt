@@ -2,4 +2,5 @@
    tal:content="view/label"
    tal:attributes="href view/href;
        data-icon view/icon;
+       id view/id|nothing;
        data-iconpos view/iconpos;"></a>
