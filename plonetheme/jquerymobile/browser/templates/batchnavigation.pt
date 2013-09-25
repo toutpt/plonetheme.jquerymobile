@@ -5,7 +5,8 @@
     metal:define-macro="navigation">
 <div class="listingBar" data-role="controlgroup" data-type="horizontal"
      i18n:domain="plone"
-     tal:condition="batch/multiple_pages">
+     tal:define="mpages batch/multiple_pages|nothing;"
+     tal:condition="mpages">
 
     <tal:first tal:condition="batch/show_link_to_first">
         <a href="" data-role="button" data-icon="fast-backward"
