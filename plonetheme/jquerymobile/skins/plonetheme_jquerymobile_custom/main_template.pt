@@ -123,13 +123,13 @@
 <tal:panels i18n:domain="plonetheme.jquerymobile">
 <div id="panel-left" tal:condition="python:plone_view.have_portlets('plone.leftcolumn', view=view)"
      data-role="panel" data-position="left" data-position-fixed="true"
-     data-swipe-close="false" data-dismissible="false">
+     data-swipe-close="true" data-dismissible="true">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelleft" />
   <div tal:replace="structure provider:plone.leftcolumn"></div>
 </div>
 <div id="panel-right" tal:condition="python:plone_view.have_portlets('plone.rightcolumn', view=view)"
      data-role="panel" data-position="right" data-position-fixed="true"
-     data-swipe-close="false" data-dismissible="false">
+     data-swipe-close="true" data-dismissible="true">
   <div tal:content="structure provider:plonetheme.jquerymobile.panelright" />
   <div tal:replace="structure provider:plone.rightcolumn"></div>
 </div>
