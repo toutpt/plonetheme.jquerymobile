@@ -37,6 +37,7 @@ setup(name='plonetheme.jquerymobile',
       install_requires=[
           'setuptools',
           'plone.browserlayer',
+          'plone.app.event',
           'plone.app.registry',
           'plone.app.modernizr',
           'collective.js.jquerymobile',

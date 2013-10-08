@@ -5,8 +5,9 @@
     i18n_domain="plonetheme.jquerymobile">
 
   <include package="plone.app.portlets"/>
+  <include package="plone.app.event"/>
   <plone:portletRenderer
-      portlet="plone.app.portlets.portlets.calendar.ICalendarPortlet"
+      portlet="plone.app.event.portlets.portlet_calendar.ICalendarPortlet"
       template="templates/calendar.pt"
       layer="plonetheme.jquerymobile.layer.Layer"
       />
