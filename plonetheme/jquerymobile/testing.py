@@ -29,5 +29,5 @@ FUNCTIONAL = FunctionalTesting(bases=(FIXTURE,),
                                name="plonetheme.jquerymobile:Functional")
 
 ROBOT = FunctionalTesting(
-    bases=(AUTOLOGIN_LIBRARY_FIXTURE, FIXTURE, z2.ZSERVER),
+    bases=(FIXTURE, AUTOLOGIN_LIBRARY_FIXTURE, z2.ZSERVER),
     name="plonetheme.jquerymobile:Robot")
