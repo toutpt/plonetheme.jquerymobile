@@ -1,20 +1,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone"
       tal:omit-tag="">
 <div data-role="collapsible" data-collapsed="false" class="portlet portletCalendar"
     i18n:domain="plone"
     tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;
-                query_string view/getQueryString;
-                url_quote_plus nocall:view/url_quote_plus;
-                showPrevMonth view/showPrevMonth;
-                showNextMonth view/showNextMonth;
+                month view/month;
+                year view/year;
                 year view/year;">
 
     <h4 class="portletHeader" i18n:translate="">
 
             <span i18n:name="monthname" i18n:translate=""
-                  tal:content="view/monthName"
+                  tal:content="view/month_name"
                   tal:omit-tag="">monthname</span>
             <span i18n:name="year" i18n:translate=""
                   tal:content="year"
@@ -27,10 +26,10 @@
                i18n:domain="plone"
                i18n:attributes="summary summary_calendar;">
             <caption class="hiddenStructure"
-                     tal:content="view/monthName">Month name</caption>
+                     tal:content="view/month_name">Month name</caption>
             <thead>
                 <tr class="weekdays"
-                    ><tal:data tal:repeat="weekday view/getWeekdays"
+                    ><tal:data tal:repeat="weekday view/weekdays"
                         ><th scope="col"
                              i18n:translate=""
                              tal:content="weekday">Su</th
@@ -38,64 +37,53 @@
                 </tr>
             </thead>
             <tbody>
-                <tr tal:repeat="week view/getEventsForCalendar"
+                <tr tal:repeat="week view/cal_data"
                     ><tal:block repeat="day week"
-                        ><tal:day define="daynumber day/day;"
-                            ><tal:isday condition="daynumber"
-                                ><tal:block define="day_event day/event;
-                                                    is_today day/is_today"
-                                    ><td class="event"
-                                        tal:condition="day_event"
-                                        tal:attributes="class python:is_today and 'todayevent' or 'event'"
-                                       ><strong><a href=""
-                                           tal:attributes="href string:${navigation_root_url}/@@search?advanced_search=True&amp;${view/getReviewStateString}start.query:record:list:date=${day/date_string}+23%3A59%3A59&amp;start.range:record=max&amp;end.query:record:list:date=${day/date_string}+00%3A00%3A00&amp;end.range:record=min&amp;list:&amp;${view/getEventTypes};
-                                                           title day/eventstring;"
-                                           tal:content="daynumber">
-                                           31
-                                       </a
-                                    ></strong></td
-                                    ><tal:notdayevent tal:condition="not: day_event"
-                                        ><td tal:condition="python:is_today"
-                                             class="todaynoevent"><strong
-                                             tal:content="daynumber">31</strong></td
-                                        ><td tal:condition="python:not is_today"
-                                             tal:content="daynumber">31</td
-                                    ></tal:notdayevent
-                                ></tal:block
-                            ></tal:isday
-                            ><tal:notisday condition="not: daynumber"
-                                ><td></td
-                            ></tal:notisday
-                        ></tal:day
-                    ></tal:block>
+                        >                <td class="event"
+                  tal:define="today day/today;
+                              next_month day/next_month;
+                              prev_month day/prev_month;
+                              events day/events;
+                              limit python:len(events) if events is not None else 0"
+                  tal:attributes="class python:u'event%s%s%s%s' %
+                              ((today and ' today' or ''),
+                              (next_month and ' cal_next_month' or ''),
+                              (prev_month and ' cal_prev_month' or ''),
+                              (events and ' cal_has_events' or ''))">
+                    <a href=""
+                      tal:omit-tag="not:events"
+                      tal:attributes="href python:view.date_events_url(day['date_string']);
+                                      title day/events_string;"
+                      tal:content="day/day">31</a>
+
+                </td>
+</tal:block>
                 </tr>
             </tbody>
 
         </table>
-        <div data-role="controlgroup" data-type="horizontal" tal:replace="nothing">
-        <!-- ajax of the calendar must be rewrite to works with jqmobile -->
-         <a href="#" rel="nofollow" data-role="button"
+        <div data-role="controlgroup" data-type="horizontal">
+      <a href="#" rel="nofollow" data-role="button"
+           class="calendarPrevious"
            title="Previous month"
-           class="calendarPrev"
-           tal:define="prevMonthMonth view/prevMonthMonth;
-                       prevMonthYear view/prevMonthYear"
-           tal:attributes="id python:showPrevMonth and 'calendar-previous' or '';
-                           href python:'%s?%smonth:int=%d&amp;year:int=%d&amp;orig_query=%s' % (request['ACTUAL_URL'], query_string, prevMonthMonth, prevMonthYear, url_quote_plus(query_string));
-                           data-year prevMonthYear;
-                           data-month prevMonthMonth;"
-           tal:condition="showPrevMonth"
+           tal:define="prev_month view/prev_month;
+                       prev_year view/prev_year"
+           tal:attributes="href view/prev_query;
+                           data-year prev_year;
+                           data-month prev_month;"
            i18n:attributes="title title_previous_month;">&laquo;</a>
-         <a href="#" rel="nofollow" data-role="button"
-           title="Next month"
+
+
+        <a href="#" rel="nofollow" data-role="button"
            class="calendarNext"
-           tal:define="nextMonthMonth view/nextMonthMonth;
-                       nextMonthYear view/nextMonthYear"
-           tal:attributes="id python:showNextMonth and 'calendar-next' or '';
-                           href python:'%s?%smonth:int=%d&amp;year:int=%d&amp;orig_query=%s' % (request['ACTUAL_URL'], query_string, nextMonthMonth, nextMonthYear, url_quote_plus(query_string));
-                           data-year nextMonthYear;
-                           data-month nextMonthMonth;"
-           tal:condition="showNextMonth"
+           title="Next month"
+           tal:define="next_month view/next_month;
+                       next_year view/next_year"
+           tal:attributes="href view/next_query;
+                           data-year next_year;
+                           data-month next_month;"
            i18n:attributes="title title_next_month;">&raquo;</a>
+
         </div>
     </div>
 </div>
