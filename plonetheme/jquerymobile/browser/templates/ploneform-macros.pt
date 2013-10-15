@@ -104,7 +104,8 @@
                           <!-- Secondary fieldsets -->
                           <tal:block tal:repeat="group groups" condition="has_groups">
 
-                  <div data-role="collapsible" class="formfieldset" tal:define="fieldset_name repeat/group/index; form_name group/label; group_description group/description|nothing">
+                  <div data-role="collapsible" tal:attributes="class string:formfieldset formfieldset-${group/label}"
+		       tal:define="fieldset_name repeat/group/index; form_name group/label; group_description group/description|nothing">
 
                     <h3 tal:content="form_name">Form name</h3>
 
