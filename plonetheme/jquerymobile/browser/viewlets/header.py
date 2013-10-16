@@ -101,6 +101,7 @@ class SiteTitle(common.ViewletBase):
 
 class GlobalSections(GlobalSectionsViewlet):
     """make the globasection use filters"""
+    index = ViewPageTemplateFile("templates/sections.pt")
     def update(self):
         GlobalSectionsViewlet.update(self)
         self.portal_registry = component.getUtility(IRegistry)
