@@ -12,8 +12,10 @@ class Layer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
+        import collective.js.jquerymobile
         import plonetheme.jquerymobile
         import plonetheme.classic
+        self.loadZCML(package=collective.js.jquerymobile)
         self.loadZCML(package=plonetheme.classic)
         self.loadZCML(package=plonetheme.jquerymobile)
 

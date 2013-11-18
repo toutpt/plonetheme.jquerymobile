@@ -2,7 +2,9 @@ from Products.CMFPlone.browser import ploneview as base
 from Products.CMFPlone.browser.interfaces import IPlone
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile as ZopeViewPageTemplateFile
+from zope.browserpage.viewpagetemplatefile import (
+    ViewPageTemplateFile as ZopeViewPageTemplateFile
+)
 from plone.uuid.interfaces import IUUID
 from zope.component import queryAdapter, queryUtility
 

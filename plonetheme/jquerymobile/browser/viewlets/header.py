@@ -36,7 +36,7 @@ class PanelLeftAction(BaseHeaderAction):
     iconpos = "notext"
     label = _(u"Open left panel")
     weight = -100
-    id="header-panel-left"
+    id = "header-panel-left"
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
@@ -51,7 +51,7 @@ class PanelRightAction(BaseHeaderAction):
     iconpos = "notext"
     label = _(u"Open right panel")
     weight = 100
-    id="header-panel-right"
+    id = "header-panel-right"
 
     def is_available(self):
         plone_view = self.context.restrictedTraverse('@@plone')
@@ -102,6 +102,7 @@ class SiteTitle(common.ViewletBase):
 class GlobalSections(GlobalSectionsViewlet):
     """make the globasection use filters"""
     index = ViewPageTemplateFile("templates/sections.pt")
+
     def update(self):
         GlobalSectionsViewlet.update(self)
         self.portal_registry = component.getUtility(IRegistry)
